@@ -1,0 +1,27 @@
+{
+  "name": "atreya-health-app",
+  "version": "1.0.0",
+  "description": "MERN stack single-page application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAli3107/Atreya-Health-App.git"
+  },
+  "keywords": [],
+  "author": "Humma, Jibril, Sumaya, Jean, Akash, Farah, Nadira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAli3107/Atreya-Health-App/issues"
+  },
+  "homepage": "https://github.com/NAli3107/Atreya-Health-App#readme",
+  "dependencies": {
+    "concurrently": "^7.2.1"
+  }
+}
