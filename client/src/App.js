@@ -1,10 +1,16 @@
-import React from 'react';
+import './App.css';
+import LoginForm from "./components/form/LoginForm";
+import Test from "./components/form/testhig"
 
-const App = ()=> {
-return (
-  <div>
-    <h1> App</h1>
-  </div>
-);
+
+function App() {
+  return (
+    <div className="App">
+      Hi all - whys this not wokring
+<Test/>
+      <LoginForm/>
+    </div>
+  );
 }
+
 export default App;
