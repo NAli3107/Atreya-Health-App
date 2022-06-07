@@ -2,7 +2,7 @@
   "name": "atreya-health-app",
   "version": "1.0.0",
   "description": "MERN stack single-page application",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
@@ -22,8 +22,17 @@
   },
   "homepage": "https://github.com/NAli3107/Atreya-Health-App#readme",
   "dependencies": {
+<<<<<<< HEAD
     "concurrently": "^7.2.1",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0"
+=======
+    "axios": "^0.27.2",
+    "concurrently": "^7.2.1",
+    "moment": "^2.29.3",
+    "react-file-base64": "^1.0.3",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
+>>>>>>> main
   }
 }
