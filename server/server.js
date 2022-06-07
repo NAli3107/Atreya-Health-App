@@ -1,19 +1,43 @@
- // modern way of node to import rather than require
- import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
+const express = require("express");
+const db = require("./config/connection");
+const { ApolloServer } = require("apollo-server-express");
+const path = require("path");
+const { typeDefs, resolvers } = require('./schemas');
+// import cors from "cors";
 
-const app = express ();
-app.use (bodyParser.json({ limit: "300mb", extended:true}));
-app.use (bodyParser.urlencoded({ limit: "300mb", extended:true}));
-app.use(cors());  
-
-const CONNECTION_URL = process.env.MONGO_CONNECTION_URL;
+const app = express();
 const PORT = process.env.PORT || 5000;
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+//   context: authMiddleware,
+});
 
-mongoose.connect(CONNECTION_URL, {useNewUrlParser: true , useUnifiedTopology : true})
-.then (()=> app.listen(PORT,() => console.log(`Server running on port: ${PORT} `)))
-.catch((error) => console.log(error.message));
+// app.use(cors());
 
-mongoose.set('useFindAndModify' ,false)
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+}
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
+  server.applyMiddleware({ app });
+
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+    });
+  });
+};
+
+startApolloServer(typeDefs, resolvers);
