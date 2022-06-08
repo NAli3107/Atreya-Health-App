@@ -11,11 +11,11 @@ export default function Navbar() {
                 <div className="navbarRight">
                     <div className="navbarIconContainer">
                         <LogoutIcon/>
-                        <span className="navbarIconBag">2</span>
+                        <span className="navbarIconBadge">2</span>
                     </div>
                     </div>
             </div>
 
         </div>
     )
-   }
+}

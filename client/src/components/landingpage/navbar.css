@@ -22,3 +22,7 @@
 .navbarIconContainer{
     position: relative;
 }
+
+.navbarIconBadge{
+    position: absolute;
+}
