@@ -49,9 +49,14 @@ const LoginForm = () => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
       };
+
+      const handleFormSubmit = async (event) => {
+        event.preventDefault();
+      console.log("something clicked")}
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleFormSubmit} >
         {/* <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -90,7 +95,7 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={"!(userFormData.email && userFormData.password)"}
+          disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
