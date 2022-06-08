@@ -28,8 +28,6 @@ const LoginForm = () => {
           event.preventDefault();
           event.stopPropagation();
         }
-
-        // LOGIN PART NOT WORKING THANKS TO MUTATIONS
         try {
             const { data } = await login({
               variables: { ...userFormData },
