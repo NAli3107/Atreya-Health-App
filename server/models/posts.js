@@ -7,7 +7,9 @@ const postSchema = new Schema({
   message: {
     type: String,
   },
-  creator: { String },
+  creator: {
+    type: String,
+  },
   tags: [
     {
       type: String,
