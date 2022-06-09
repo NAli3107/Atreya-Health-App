@@ -20,8 +20,6 @@ export default function Navbar() {
                     <span className="navbarIconBadge4">Login/Signup</span>
                 </div>
             </div>
-
         </div>
     )
 }
- 

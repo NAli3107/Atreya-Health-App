@@ -1,18 +1,17 @@
 import React from 'react';
 import Navbar from'./components/landingpage/Navbar';
-import Sidebar from './components/landingpage/Sidebar';
 import "./app.css"
+import Humma from "./images/yoga.jpg"
 
 function App() {
   return (
     <div>
       <Navbar />
-        <div className="container">
-          <Sidebar/>
-          other pages
-        </div>
-    
+      <p>I believe that the greatest gift you can give your family and the world 
+        is a healthy you.</p>
+        <img src={Humma}></img>
     </div>
+  
     );
 }
 export default App;
