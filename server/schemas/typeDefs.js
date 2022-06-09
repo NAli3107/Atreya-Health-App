@@ -18,7 +18,7 @@ type User {
   password: String!
 }
 type Auth {
-  token: ID!
+  _id: ID!
   user: User
 }
 type Query {
