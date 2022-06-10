@@ -1,8 +1,11 @@
 import React from 'react';
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import './App.css';
+import Navbar from "./components/suma-com/Navbar";
+
 
 const httpLink = createHttpLink({uri: "graphql"});
 
@@ -18,9 +21,21 @@ function App() {
     <ApolloProvider client={client}>
     <div className="App">
       <h1>Hello Doctors</h1>
-      <Login/>
-<Signup/>
+      {/* <Login/>
+<Signup/> */}
+<Router>
+<Navbar />
+{/* <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/saved" element={<Signup />} />
+            <Route
+              path="*"
+              element={<h1 className="display-2">Wrong page!</h1>}
+            /> */}
+          {/* </Routes> */}
+          </Router>
     </div>
+
     </ApolloProvider>
   );
 }
