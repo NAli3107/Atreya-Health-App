@@ -4,8 +4,9 @@ const typeDefs = gql`
 
 type User {
   _id: ID!
-  email: String!
-  password: String!
+  username: String!
+  email: String
+  password: String
 }
 
 type Post {
@@ -31,14 +32,14 @@ input PostInput {
 }
 
 type Auth {
-  _id: ID!
+  token: ID!
   user: User
 }
 
 type Query {
   me: User
   posts: [Post]
-  post: (_id: ID!)
+  post: ID!
 }
 
 type Mutation {
