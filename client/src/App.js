@@ -1,17 +1,22 @@
 import React from 'react';
-import Navbar from'./components/landingpage/Navbar';
-import "./app.css"
-import yoga from "./images/yoga.jpg"
-
+import Login from "./components/form/LoginForm"
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
+import './App.css';
+const httpLink = createHttpLink({uri: "graphql"});
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 function App() {
   return (
-    <div>
-      <Navbar />
-      <p>"I believe that the greatest gift you can give your family and the world 
-        is a healthy you"</p>
-        <img src={yoga}></img>
+
+    <ApolloProvider client={client}>
+    <div className="App">
+      <h1>Hello Doctors</h1>
+      <Login/>
+
     </div>
-  
-    );
+    </ApolloProvider>
+  );
 }
 export default App;
