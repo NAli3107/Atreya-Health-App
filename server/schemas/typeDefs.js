@@ -1,15 +1,4 @@
-// const { gql } = require("apollo-server-express");
-
-// const typeDefs = gql`
-// type Query {
-//     dummy: String
-//   }
-// `;
-
-// module.exports = typeDefs;
-
-
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
 
@@ -20,6 +9,17 @@ type User {
 }
 
 type Post {
+  postId: ID!
+  title: String
+  message: String
+  creator: String
+  tags: [String]
+  selectedFile: String
+  likeCount: Int
+  createdAt: String
+}
+
+input PostInput {
   postId: ID!
   title: String
   message: String
@@ -44,15 +44,11 @@ type Query {
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password:String!): Auth
-  addPost(title: String, message: String, creator: String, tags: [String], selectedFile: String): User
-  editPost(title: String, message: String, creator: String, tags: [String], selectedFile: String): User
-  removePost(postId: ID!): User
-  likePost(postId: ID!): User
+  createPost(title: String, message: String, creator: String, tags: [String], selectedFile: String): Post
+  editPost(title: String, message: String, creator: String, tags: [String], selectedFile: String): Post
+  removePost(postId: ID!): Post
+  likePost(postId: ID!): Post
 }
-
-
 `;
 
 module.exports = typeDefs;
-
-

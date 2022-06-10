@@ -38,8 +38,50 @@ const resolvers = {
       console.log('from login', user);
       return { user };
     },
-  },
-  
+    createPost: async (parent, { postInfo }, context) => {
+      console.log(postInfo, context.user,);
+      if (context.user) {
+        const newPosts = await (
+          { _id: context.user._id },
+          { $addToSet: {  } },
+          { new: true }
+        );
+
+        return newPosts;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    editPost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const removePosts = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { } },
+          { new: true }
+        );
+        return removePosts;
+      }
+    },
+    removePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const removePost = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: {  } },
+          { new: true }
+        );
+        return removePost;
+      }
+    },
+    likePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const likePost = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: {  } },
+          { new: true }
+        );
+        return likePost;
+      }
+    },
+  },  
 };
 
 module.exports = resolvers;
