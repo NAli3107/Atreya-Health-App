@@ -1,6 +1,6 @@
 const { User } = require('../models');
 const { AuthenticationError} = require ("apollo-server-express")
-// const { signToken } = require("../schemas/utils/auth");
+const { signToken } = require("../schemas/utils/auth");
 
 
 const resolvers = {
@@ -35,10 +35,10 @@ const resolvers = {
       // if (!correctPw) {
       //   throw new AuthenticationError("Incorrect credentials");
       // }
-
-      // const token = signToken(user);
-      console.log('from login', user);
-      return { user };
+// hn added token below..
+      const token = signToken(user);
+      console.log(' from login', user);
+      return {token, user };
     },
   },
   

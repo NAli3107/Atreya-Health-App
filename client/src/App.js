@@ -1,6 +1,4 @@
 import React from 'react';
-import Login from "./components/form/LoginForm";
-import Signup from "./components/form/SignupForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import './App.css';
@@ -25,14 +23,7 @@ function App() {
 <Signup/> */}
 <Router>
 <Navbar />
-{/* <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/saved" element={<Signup />} />
-            <Route
-              path="*"
-              element={<h1 className="display-2">Wrong page!</h1>}
-            /> */}
-          {/* </Routes> */}
+
           </Router>
     </div>
 
