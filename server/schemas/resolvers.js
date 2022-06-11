@@ -38,19 +38,27 @@ const resolvers = {
       console.log("from login", user);
       return { token, user };
     },
-    createPost: async (parent, { postInfo }, context) => {
+    createPost: async (parent, { title, message, creator, selectedFile }, context) => {
       if (context.user) {
         const newPosts = await Posts.create({
-          postInfo,
+          title,
+          message,
+          creator,
+          selectedFile,
           creator: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { posts: newPosts._id } }
+          { $addToSet: { test: 'testes' } },
+          { returnNewDocument: true }
         );
 
-        return newPosts;
+        console.log(newPosts)
+        return {
+          ...newPosts,
+          postId: newPosts._id
+        };
       }
       throw new AuthenticationError("You need to be logged in!");
     },
