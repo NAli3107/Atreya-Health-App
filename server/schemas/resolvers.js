@@ -57,7 +57,7 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        const newPosts = await Posts.create({
+        const newPost = await Posts.create({
           title,
           message,
           creator,
@@ -68,12 +68,12 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { posts: newPosts._id } },
+          { $addToSet: { posts: newPost._id } },
           { returnNewDocument: true }
         );
 
-        console.log(newPosts);
-        return newPosts;
+        console.log(newPost);
+        return newPost;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -83,33 +83,40 @@ const resolvers = {
       context
     ) => {
       if (context.user) {
-        const updatePosts = await User.findOneAndUpdate(
+        const updatePost = await User.findOneAndUpdate(
           { _id: postId },
           { $set: { title, message, creator, tags, selectedFile } },
           { new: true }
         );
-        return updatePosts;
+        return updatePost;
       }
     },
-    // removePost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const removePost = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: {  } },
-    //       { new: true }
-    //     );
-    //     return removePost;
-    //   }
-    // },
+    removePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const deletePost = await Posts.findOneAndDelete({
+          _id: postId,
+          creator: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { posts: deletePost._id } }
+        );
+        return deletePost;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     // likePost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const likePost = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: {  } },
-    //       { new: true }
-    //     );
-    //     return likePost;
-    //   }
+    //   const likePost = await Posts.findOneAndDelete({
+    //     _id: postId,
+    //     creator: context.user.username,
+    //   });
+
+    //   await User.findOneAndUpdate(
+    //     { _id: context.user._id },
+    //     { $pull: { posts: likePost._id } }
+    //   );
+    //   return likePost;
     // },
   },
 };
