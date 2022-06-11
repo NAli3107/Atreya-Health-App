@@ -18,6 +18,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Posts',
+      },
+    ],
   },
   // set this to use virtual below
   {
