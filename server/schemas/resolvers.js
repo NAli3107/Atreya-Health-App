@@ -4,6 +4,19 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return User.find().populate("posts");
+    },
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate("posts");
+    },
+    posts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Posts.find(params).sort({ createdAt: -1 });
+    },
+    post: async (parent, { postId }) => {
+      return Posts.findOne({ _id: postId });
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = User.findOne({ _id: context.user._id }).select(
@@ -54,15 +67,12 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { test: "testes" } },
+          { $addToSet: { posts: newPosts._id } },
           { returnNewDocument: true }
         );
 
         console.log(newPosts);
-        return {
-          ...newPosts,
-          postId: newPosts._id,
-        };
+        return newPosts;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
