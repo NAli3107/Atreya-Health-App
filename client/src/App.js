@@ -1,5 +1,6 @@
 import React from 'react';
-import Login from "./components/form/LoginForm"
+import Login from "./components/form/LoginForm";
+import Signup from "./components/form/SignupForm";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import './App.css';
 
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <h1>Hello Doctors</h1>
       <Login/>
-
+<Signup/>
     </div>
     </ApolloProvider>
   );
