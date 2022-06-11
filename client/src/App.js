@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "./components/form/LoginForm";
-import Signup from "./components/form/SignupForm";
+// import Login from "./components/form/LoginForm";
+// import Signup from "./components/form/SignupForm";
 import {
   ApolloClient,
   InMemoryCache,
@@ -11,6 +11,8 @@ import { setContext } from '@apollo/client/link/context';
 import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
 import yoga from "./images/yoga.jpg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const httpLink = createHttpLink({ uri: "graphql" });
 
@@ -34,9 +36,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Navbar />
-        <Login />
-        <Signup />
+      <Router>
+<Navbar />
+          </Router>
+        {/* <Login />
+        <Signup /> */}
         <img src={yoga} />
       </div>
     </ApolloProvider>
