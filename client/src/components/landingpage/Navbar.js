@@ -15,8 +15,12 @@ const AppNavbar = () => {
 
   return (
     <>
-       <div className="navbar">
+       {/* <div className="navbar"> */}
             <div  className="navbarWrapper">
+            <div className="navbarLeft">
+                    <span className="logo">Atreya</span>
+                </div>
+                
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
         <div className="navbarRight">
@@ -31,7 +35,7 @@ const AppNavbar = () => {
             <Nav className='ml-auto'>
             <div className="navbarRight">
               <Nav.Link as={Link} to='/'>
-              <span className="navbarIconBadge3">Stay Informed</span>
+              <span className="navbarIconBadge1">Stay Informed</span>
               </Nav.Link>
               </div>
               {/* if user is logged in show saved books and logout */}
@@ -60,7 +64,7 @@ const AppNavbar = () => {
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton >
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
@@ -85,7 +89,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       </div>
-      </div>
+ 
     </>
   );
 };
