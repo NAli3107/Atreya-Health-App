@@ -1,12 +1,15 @@
 import React from "react";
 import Login from "./components/form/LoginForm";
+import Signup from "./components/form/SignupForm";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import "./App.css";
+import Navbar from "./components/landingpage/Navbar";
+import "./app.css";
+import yoga from "./images/yoga.jpg";
 
 const httpLink = createHttpLink({ uri: "graphql" });
 
@@ -29,9 +32,11 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <h1>Hello Doctors</h1>
+      <div>
+        <Navbar />
         <Login />
+        <Signup />
+        <img src={yoga} />
       </div>
     </ApolloProvider>
   );
