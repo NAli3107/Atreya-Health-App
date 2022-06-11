@@ -4,6 +4,19 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return User.find().populate("posts");
+    },
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate("posts");
+    },
+    posts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Posts.find(params).sort({ createdAt: -1 });
+    },
+    post: async (parent, { postId }) => {
+      return Posts.findOne({ _id: postId });
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = User.findOne({ _id: context.user._id }).select(
@@ -40,62 +53,85 @@ const resolvers = {
     },
     createPost: async (
       parent,
-      { title, message, creator, selectedFile },
+      { title, message, creator, tags, selectedFile },
       context
     ) => {
       if (context.user) {
-        const newPosts = await Posts.create({
+        const newPost = await Posts.create({
           title,
           message,
           creator,
+          tags,
           selectedFile,
           creator: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { test: "testes" } },
+          { $addToSet: { posts: newPost._id } },
           { returnNewDocument: true }
         );
 
-        console.log(newPosts);
-        return {
-          ...newPosts,
-          postId: newPosts._id,
-        };
+        console.log(newPost);
+        return newPost;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // editPost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const removePosts = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { } },
-    //       { new: true }
-    //     );
-    //     return removePosts;
-    //   }
-    // },
-    // removePost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const removePost = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: {  } },
-    //       { new: true }
-    //     );
-    //     return removePost;
-    //   }
-    // },
+    editPost: async (
+      parent,
+      { postId, title, message, creator, tags, selectedFile },
+      context
+    ) => {
+      if (context.user) {
+        const updatePost = await User.findOneAndUpdate(
+          { _id: postId },
+          { $set: { title, message, creator, tags, selectedFile } },
+          { new: true }
+        );
+        return updatePost;
+      }
+    },
+    removePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const deletePost = await Posts.findOneAndDelete({
+          _id: postId,
+          creator: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { posts: deletePost._id } }
+        );
+        return deletePost;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     // likePost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const likePost = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: {  } },
-    //       { new: true }
-    //     );
-    //     return likePost;
-    //   }
+    //   const likePost = await Posts.findOneAndDelete({
+    //     _id: postId,
+    //     creator: context.user.username,
+    //   });
+
+    //   await User.findOneAndUpdate(
+    //     { _id: context.user._id },
+    //     { $pull: { posts: likePost._id } }
+    //   );
+    //   return likePost;
     // },
+
+    /*
+    export const likePost = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    
+    const post = await PostMessage.findById(id);
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+    
+    res.json(updatedPost);
+}
+    */
   },
 };
 

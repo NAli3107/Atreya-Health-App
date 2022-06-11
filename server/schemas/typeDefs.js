@@ -8,7 +8,7 @@ const typeDefs = gql`
     password: String
   }
   type Post {
-    postId: ID!
+    _id: ID!
     title: String
     message: String
     creator: String
@@ -17,8 +17,8 @@ const typeDefs = gql`
     likeCount: Int
     createdAt: String
   }
-  input PostInput {
-    postId: ID!
+  input postInput {
+    _id: ID!
     title: String
     message: String
     creator: String
@@ -32,9 +32,11 @@ const typeDefs = gql`
     user: User
   }
   type Query {
+    users: [User]
+    user(username: String!): User
+    posts(username: String): [Post]
+    post(postId: ID!): Post
     me: User
-    posts: [Post]
-    post: ID!
   }
   type Mutation {
     login(email: String!, password: String!): Auth
@@ -47,6 +49,7 @@ const typeDefs = gql`
       selectedFile: String!
     ): Post
     editPost(
+      postId: ID
       title: String
       message: String
       creator: String
