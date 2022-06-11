@@ -3,14 +3,11 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-<<<<<<< HEAD
-=======
     username: {
       type: String,
       required: true,
       unique: true,
     },
->>>>>>> main
     email: {
       type: String,
       required: true,
@@ -46,15 +43,12 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-<<<<<<< HEAD
 userSchema.virtual('bookCount').get(function () {
   return this.savedBooks.length;
 });
-=======
 // userSchema.virtual('bookCount').get(function () {
 //   return this.savedBooks.length;
 // });
->>>>>>> main
 
 const User = model('User', userSchema);
 
