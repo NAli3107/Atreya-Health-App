@@ -17,7 +17,7 @@ const typeDefs = gql`
     likeCount: Int
     createdAt: String
   }
-  input PostInput {
+  input postInput {
     _id: ID!
     title: String
     message: String
