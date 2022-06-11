@@ -4,7 +4,7 @@ import Signup from "./components/form/SignupForm";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
 import Navbar from'./components/landingpage/Navbar';
 import "./app.css"
-import yoga from './images/yoga.jpg';
+
 
 const httpLink = createHttpLink({uri: "graphql"});
 
@@ -22,7 +22,8 @@ function App() {
       <Navbar/>
       <Login/>
   <Signup/>
-   <img src={yoga}/>
+  <div className='yoga'>image</div>
+  
     </div>
     </ApolloProvider>
   );
