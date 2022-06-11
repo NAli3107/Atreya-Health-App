@@ -22,14 +22,3 @@ export const ADD_USER = gql`
     }
   }
 `;
-export const CREATE_POST = gql `
-`;
-
-export const EDIT_POST = gql `
-`;
-
-export const REMOVE_POST = gql `
-`;
-
-export const LIKE_POST = gql `
-`;
