@@ -15,7 +15,7 @@ const AppNavbar = () => {
 
   return (
     <>
-       {/* <div className="navbar"> */}
+       <div className="navbar">
             <div  className="navbarWrapper">
             <div className="navbarLeft">
                     <span className="logo">Atreya</span>
@@ -89,7 +89,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       </div>
- 
+      </div>
     </>
   );
 };
