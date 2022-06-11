@@ -22,8 +22,6 @@ function App() {
       <Navbar/>
       <Login/>
   <Signup/>
-  <div className='yoga'>image</div>
-  
     </div>
     </ApolloProvider>
   );
