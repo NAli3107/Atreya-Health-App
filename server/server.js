@@ -7,7 +7,7 @@ const {authMiddleware} = require('./schemas/utils/auth');
 // import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -28,10 +28,13 @@ app.get("/", (req, res) => {
 });
 
 const startApolloServer = async (typeDefs, resolvers) => {
+  console.log('1')
   await server.start();
+  console.log('2')
   server.applyMiddleware({ app });
 
   db.once("open", () => {
+    console.log('3')
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(
