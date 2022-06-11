@@ -28,10 +28,13 @@ app.get("/", (req, res) => {
 });
 
 const startApolloServer = async (typeDefs, resolvers) => {
+  console.log('1')
   await server.start();
+  console.log('2')
   server.applyMiddleware({ app });
 
   db.once("open", () => {
+    console.log('3')
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(

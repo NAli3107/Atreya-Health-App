@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from "./components/form/LoginForm"
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
-import './App.css';
+import './app.css';
 const httpLink = createHttpLink({uri: "graphql"});
 const client = new ApolloClient({
   link: httpLink,
