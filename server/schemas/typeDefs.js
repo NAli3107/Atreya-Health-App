@@ -49,6 +49,7 @@ const typeDefs = gql`
       selectedFile: String!
     ): Post
     editPost(
+      postId: ID
       title: String
       message: String
       creator: String

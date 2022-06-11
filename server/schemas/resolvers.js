@@ -53,7 +53,7 @@ const resolvers = {
     },
     createPost: async (
       parent,
-      { title, message, creator, selectedFile },
+      { title, message, creator, tags, selectedFile },
       context
     ) => {
       if (context.user) {
@@ -61,6 +61,7 @@ const resolvers = {
           title,
           message,
           creator,
+          tags,
           selectedFile,
           creator: context.user.username,
         });
@@ -76,16 +77,20 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // editPost: async (parent, { postId }, context) => {
-    //   if (context.user) {
-    //     const removePosts = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { } },
-    //       { new: true }
-    //     );
-    //     return removePosts;
-    //   }
-    // },
+    editPost: async (
+      parent,
+      { postId, title, message, creator, tags, selectedFile },
+      context
+    ) => {
+      if (context.user) {
+        const updatePosts = await User.findOneAndUpdate(
+          { _id: postId },
+          { $set: { title, message, creator, tags, selectedFile } },
+          { new: true }
+        );
+        return updatePosts;
+      }
+    },
     // removePost: async (parent, { postId }, context) => {
     //   if (context.user) {
     //     const removePost = await User.findOneAndUpdate(
