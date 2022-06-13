@@ -17,8 +17,6 @@ const AppNavbar = () => {
 
   return (
     <>
-
-      <div className="navbar"> 
             <div  className="navbarWrapper">
             <div className="navbarLeft">
                     <span className="logo">Atreya</span>
@@ -26,30 +24,21 @@ const AppNavbar = () => {
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>
-            
- <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
+           <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>          
-
               {Auth.loggedIn() ? (
                 <>
                  <li className="navbarIconBadge">  <CustomLink to="/stayconnected">Stay Connected</CustomLink></li>
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>
               ) : 
-          
               (
                <li className="navbarIconBadge">  <Nav.Link onClick={() => setShowModal(true)}><li className="navbarIconBadge">Login/Sign Up</li>
                 </Nav.Link></li>
-
               )}
-
-             
-          
             </Nav>
       </Navbar>
-
       
-      {/* set modal data up */}
       <Modal
         size='lg'
         show={showModal}
@@ -82,7 +71,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       </div>
-      </div>
+   
     </>
   );
 };
