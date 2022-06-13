@@ -24,6 +24,7 @@ function App() {
   <Signup/>
    <img src={yoga}/>
     </div>
+    <Wall posts={post} />
     </ApolloProvider>
   );
 }
