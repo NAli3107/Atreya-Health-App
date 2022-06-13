@@ -38,11 +38,13 @@ const AppNavbar = () => {
               </div>
               {Auth.loggedIn() ? (
                 <>
-                 <div className="navbarIconBadge">
+                 <div className="navbarRight">
                   <Nav.Link as={Link} to='/BLOG'>
-                   Stay Connected
+                  <li className="navbarIconBadge"> Stay Connected</li>
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  </div>
+                  <div className="navbarRight">
+                  <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>
                   </div>
                 </>
               ) : (
