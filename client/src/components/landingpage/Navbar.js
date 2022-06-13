@@ -1,8 +1,9 @@
 
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Navbar, Nav, Modal, Tab } from 'react-bootstrap';
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import SignUpForm from '../form/SignupForm';
 import LoginForm from '../form/LoginForm';
 import "./navbar.css"
@@ -25,28 +26,23 @@ const AppNavbar = () => {
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>
-            <ul>
-            <div className="navbarRight">
-          <Nav.Link as={Link} to='/home'>
-          <li className="navbarIconBadge">Home</li>
-          </Nav.Link>
-          </div>
-            <div className="navbarRight">
-              <Nav.Link as={Link} to='/'>
-              <li className="navbarIconBadge">Stay Informed</li>
-              </Nav.Link>
-              </div>
+
+              <ul>
+ <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
+        <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>          
+        
+        </ul>
+
               {Auth.loggedIn() ? (
                 <>
-                 <div className="navbarRight">
-                  <Nav.Link as={Link} to='/BLOG'>
-                  <li className="navbarIconBadge"> Stay Connected</li>
-                  </Nav.Link>
-                  </div>
-                  <div className="navbarRight">
+      
+                 <li className="navbarIconBadge">  <CustomLink to="/stayconnected">Stay Connected</CustomLink></li>
+                 
+  
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>
-                  </div>
+                 
                 </>
+      
               ) : (
                 <div className="navbarRight">
                 <Nav.Link onClick={() => setShowModal(true)}><li className="navbarIconBadge">Login/Sign Up</li>
@@ -55,7 +51,7 @@ const AppNavbar = () => {
               )}
 
              
-               </ul>
+          
             </Nav>
       </Navbar>
 
@@ -99,3 +95,17 @@ const AppNavbar = () => {
 };
 
 export default AppNavbar;
+
+
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+
+  return (
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  )
+}
