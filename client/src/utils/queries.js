@@ -21,9 +21,6 @@ export const QUERY_USER = gql`
         title: String
         message: String
         creator: String
-        tags: [String]
-        selectedFile: String
-        likeCount: Int
         createdAt: String
       }
     }
@@ -37,9 +34,6 @@ export const QUERY_POSTS = gql`
       title: String
       message: String
       creator: String
-      tags: [String]
-      selectedFile: String
-      likeCount: Int
       createdAt: String
     }
   }
@@ -52,9 +46,6 @@ export const QUERY_SINGLE_POST = gql`
       title: String
       message: String
       creator: String
-      tags: [String]
-      selectedFile: String
-      likeCount: Int
       createdAt: String
     }
   }
@@ -71,9 +62,6 @@ export const QUERY_ME = gql`
          title: String
          message: String
          creator: String
-         tags: [String]
-         selectedFile: String
-         likeCount: Int
          createdAt: String
       }
     }

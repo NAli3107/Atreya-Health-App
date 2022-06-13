@@ -51,18 +51,12 @@ const resolvers = {
       console.log("from login", user);
       return { token, user };
     },
-    createPost: async (
-      parent,
-      { title, message, creator, tags, selectedFile },
-      context
-    ) => {
+    createPost: async (parent, { title, message, creator }, context) => {
       if (context.user) {
         const newPost = await Posts.create({
           title,
           message,
           creator,
-          tags,
-          selectedFile,
           creator: context.user.username,
         });
 
@@ -77,15 +71,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    editPost: async (
-      parent,
-      { postId, title, message, creator, tags, selectedFile },
-      context
-    ) => {
+    editPost: async (parent, { postId, title, message, creator }, context) => {
       if (context.user) {
         const updatePost = await User.findOneAndUpdate(
           { _id: postId },
-          { $set: { title, message, creator, tags, selectedFile } },
+          { $set: { title, message, creator } },
           { new: true }
         );
         return updatePost;
@@ -106,32 +96,6 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // likePost: async (parent, { postId }, context) => {
-    //   const likePost = await Posts.findOneAndDelete({
-    //     _id: postId,
-    //     creator: context.user.username,
-    //   });
-
-    //   await User.findOneAndUpdate(
-    //     { _id: context.user._id },
-    //     { $pull: { posts: likePost._id } }
-    //   );
-    //   return likePost;
-    // },
-
-    /*
-    export const likePost = async (req, res) => {
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-    
-    const post = await PostMessage.findById(id);
-
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
-    
-    res.json(updatedPost);
-}
-    */
   },
 };
 
