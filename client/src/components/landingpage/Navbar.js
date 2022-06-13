@@ -26,28 +26,21 @@ const AppNavbar = () => {
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>
-
-              <ul>
+            
  <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>          
-        
-        </ul>
 
               {Auth.loggedIn() ? (
                 <>
-      
                  <li className="navbarIconBadge">  <CustomLink to="/stayconnected">Stay Connected</CustomLink></li>
-                 
-  
-                  <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>
-                 
+                  <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>
-      
-              ) : (
-                <div className="navbarRight">
-                <Nav.Link onClick={() => setShowModal(true)}><li className="navbarIconBadge">Login/Sign Up</li>
-                </Nav.Link>
-                </div>
+              ) : 
+          
+              (
+               <li className="navbarIconBadge">  <Nav.Link onClick={() => setShowModal(true)}><li className="navbarIconBadge">Login/Sign Up</li>
+                </Nav.Link></li>
+
               )}
 
              

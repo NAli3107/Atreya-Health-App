@@ -19,38 +19,14 @@ justify-content: space-between;
     background-color: pink; 
 } 
 
- /* .navbarIconBadge{
-    position: absolute;
-
+ .navbarIconBadge{
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-  
     display: inline;
     align-items: center;
     justify-content: center;
 
-}  */
-
-.navbarRight{
-  color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
-}
-/* .navbarLeft{
-
-    top: 10px;
-    right: 5px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    
-}    */
+} 
 
 
       .thumbnail:hover {
@@ -84,11 +60,6 @@ justify-content: space-between;
         color: #000;
       }
       
-/* 
-      .logo {
-        width: 20%;
-        float: left;
-      } */
       .navbar-ul {
         width: 80%;
         float: left;
@@ -97,7 +68,6 @@ justify-content: space-between;
         padding: 0;
       }
  li {
-        background-color: red;
         display: inline;
         list-style: none;
         font-size: 18px;
