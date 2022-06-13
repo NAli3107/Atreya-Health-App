@@ -9,53 +9,55 @@ import "./navbar.css"
 import Auth from '../../utils/auth';
 import "./UserIn.css"
 
+
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-       <div className="navbar">
+
+      <div className="navbar"> 
             <div  className="navbarWrapper">
             <div className="navbarLeft">
                     <span className="logo">Atreya</span>
                 </div>
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
-        <div className="navbarRight">
-          <Navbar.Brand as={Link} to='/home'>
-          <span className="navbarIconBadge1">Home</span>
-          </Navbar.Brand>
-          </div>
-{/*   
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'> */}
-          
             <Nav className='ml-auto'>
+            <ul>
+            <div className="navbarRight">
+          <Nav.Link as={Link} to='/home'>
+          <li className="navbarIconBadge">Home</li>
+          </Nav.Link>
+          </div>
             <div className="navbarRight">
               <Nav.Link as={Link} to='/'>
-              <span className="navbarIconBadge1">Stay Informed</span>
+              <li className="navbarIconBadge">Stay Informed</li>
               </Nav.Link>
               </div>
-              {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                 <div className="navbarRight">
+                 <div className="navbarIconBadge">
                   <Nav.Link as={Link} to='/BLOG'>
                    Stay Connected
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                   </div>
                 </>
-                
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <div className="navbarRight">
+                <Nav.Link onClick={() => setShowModal(true)}><li className="navbarIconBadge">Login/Sign Up</li>
+                </Nav.Link>
+                </div>
               )}
+
+             
+               </ul>
             </Nav>
-          {/* </Navbar.Collapse> */}
-        </Container>
       </Navbar>
+
+      
       {/* set modal data up */}
       <Modal
         size='lg'
