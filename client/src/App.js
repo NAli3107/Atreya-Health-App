@@ -11,7 +11,8 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
-import yoga from "./images/yoga.jpg";
+ import yoga from "./images/yogo2.png";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
