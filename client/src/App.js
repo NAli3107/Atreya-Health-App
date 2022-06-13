@@ -5,6 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apo
 import Navbar from'./components/landingpage/Navbar';
 import "./app.css"
 import yoga from './images/yoga.jpg';
+import BeInformed from './components/beInformed/BeInformed'
+import Testimonials from './components/testimonials/Testimonials'
+
+
 
 const httpLink = createHttpLink({uri: "graphql"});
 
@@ -21,7 +25,10 @@ function App() {
     <div>
       <Navbar/>
       <Login/>
-  <Signup/>
+      <Signup/>
+      <BeInformed/>
+      <Testimonials/>
+
    <img src={yoga}/>
     </div>
     </ApolloProvider>
