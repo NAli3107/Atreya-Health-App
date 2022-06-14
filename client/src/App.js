@@ -2,6 +2,7 @@ import React from "react";
 // hn
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";
+import PostForm from "./components/postForm/NewPost";
 import {
   ApolloClient,
   InMemoryCache,
@@ -48,7 +49,7 @@ function App() {
 <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stayinformed" element={<StayInformed />} />
-          <Route path="/stayconnected" element={<StayConnected />} />
+          <Route path="/stayconnected" element={<PostForm/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
