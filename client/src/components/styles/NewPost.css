@@ -1,12 +1,12 @@
 #newpost {
-    background-color: #393939;
+    background-color: #6D3744;
     color: white;
     text-align: center;
     padding: 10px;
 }
 
 #newpost h1 span {
-    color: #ea1538;
+    color:white;
 }
 
 form {
@@ -34,7 +34,7 @@ textarea {
 
 .form-primary {
     border-radius: 10px 10px 0px 0px;
-    border-right: 4px solid #ea1538;
+    border-right: 4px solid white;
     height: 45px;
     background-color: rgba(0,0,0,0.6);
     padding: 13px 0;
@@ -46,15 +46,15 @@ textarea {
     border-radius: 0px 0px 10px 10px;
     margin-bottom: 25px;
     height: 175px;
-    border-right: 4px solid #ea1538;
-    border-bottom: 4px solid #ea1538;
+    border-right: 4px solid white;
+    border-bottom: 4px solid white;
     background-color: rgba(0,0,0,0.4);
 }
 
 textarea:focus {
     outline: none;
-    border-bottom: 4px solid #ea1538;
-    border-right: 4px solid #ea1538;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
 }
 
 textarea::-webkit-scrollbar {
