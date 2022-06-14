@@ -1,11 +1,18 @@
-//Importing these files to display
+
 import React, { useCallback } from "react";
+//Importing these files to display
+
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
-import Navbar from'./components/landingpage/Navbar';
-import "./app.css"
-import yoga from './images/yoga.jpg';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import Navbar from "./components/landingpage/Navbar";
+import "./app.css";
+import yoga from "./images/yoga.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
 // import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
