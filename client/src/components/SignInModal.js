@@ -8,34 +8,34 @@ import { authentication } from "../services/firebase-config";
 import GitHubLogo from "../images/github.svg";
 
 const SignInModal = ({ display, toggle }) => {
-    // const signInWithGoogle = () => {
-    //     const provider = new GoogleAuthProvider();
-    //     signInWithPopup(authentication, provider)
-    //         .then(re => {
-    //             console.log(re);
-    //             toggle();
-    //         })
-    //         .catch((err) => {
-    //             console.error(err);
-    //         })
-    // }
+        const signInWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(authentication, provider)
+        .then(re => {
+            console.log(re);
+            toggle();
+        })
+        .catch((err) => {
+    console.error(err);
+        })
+    }
 
-    // const signInWithGithub = () => {
-    //     const provider = new GithubAuthProvider();
-    //     signInWithPopup(authentication, provider)
-    //     .then(re => {
-    //         console.log(re);
-    //         toggle();
-    //     })
-    //     .catch((err) => {
-    //         console.log(err);
-    //     })
-    // }
+        const signInWithGithub = () => {
+        const provider = new GithubAuthProvider();
+            signInWithPopup(authentication, provider)
+        .then(re => {
+            console.log(re);
+        toggle();
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        }
 
-    // const signInDemo = () => {
-    //     signInAnonymously(authentication);
-    //     toggle();
-    // }
+        const signInDemo = () => {
+        signInAnonymously(authentication);
+        toggle();
+        }
 
     return display && 
     <div id="signinmodal">
