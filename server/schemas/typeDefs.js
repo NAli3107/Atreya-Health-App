@@ -1,6 +1,8 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
+scalar Date
+
   type User {
     _id: ID!
     username: String!
@@ -12,14 +14,14 @@ const typeDefs = gql`
     title: String
     message: String
     creator: String
-    createdAt: String
+    createdAt: Date
   }
   input postInput {
     _id: ID!
     title: String
     message: String
     creator: String
-    createdAt: String
+    createdAt: Date
   }
   type Auth {
     token: ID!

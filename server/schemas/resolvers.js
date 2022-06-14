@@ -1,8 +1,25 @@
 const { User, Posts } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
+const { GraphQLScalarType, Kind } = require('graphql');
 
 const resolvers = {
+  Date: new GraphQLScalarType({
+    name: 'Date',
+    description: 'Date custom scalar type',
+    serialize(value) {
+      return value.getTime(); // Convert outgoing Date to integer for JSON
+    },
+    parseValue(value) {
+      return new Date(value); // Convert incoming integer to Date
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return new Date(parseInt(ast.value, 10)); // Convert hard-coded AST string to integer and then to Date
+      }
+      return null; // Invalid hard-coded value (not an integer)
+    },
+  }),
   Query: {
     users: async () => {
       return User.find().populate("posts");
@@ -52,14 +69,12 @@ const resolvers = {
       return { token, user };
     },
     createPost: async (parent, { title, message, creator }, context) => {
-      if (context.user) {
+      // if (context.user) {
         const newPost = await Posts.create({
           title,
           message,
           creator,
-          creator: context.user.username,
         });
-
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { posts: newPost._id } },
@@ -68,34 +83,34 @@ const resolvers = {
 
         console.log(newPost);
         return newPost;
-      }
-      throw new AuthenticationError("You need to be logged in!");
+      // }
+      // throw new AuthenticationError("You need to be logged in!");
     },
-    editPost: async (parent, { postId, title, message, creator }, context) => {
-      if (context.user) {
-        const updatePost = await User.findOneAndUpdate(
-          { _id: postId },
-          { $set: { title, message, creator } },
-          { new: true }
-        );
-        return updatePost;
-      }
-    },
-    removePost: async (parent, { postId }, context) => {
-      if (context.user) {
-        const deletePost = await Posts.findOneAndDelete({
-          _id: postId,
-          creator: context.user.username,
-        });
+  //   editPost: async (parent, { postId, title, message, creator }, context) => {
+  //     if (context.user) {
+  //       const updatePost = await User.findOneAndUpdate(
+  //         { _id: postId },
+  //         { $set: { title, message, creator } },
+  //         { new: true }
+  //       );
+  //       return updatePost;
+  //     }
+  //   },
+  //   removePost: async (parent, { postId }, context) => {
+  //     if (context.user) {
+  //       const deletePost = await Posts.findOneAndDelete({
+  //         _id: postId,
+  //         creator: context.user.username,
+  //       });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { posts: deletePost._id } }
-        );
-        return deletePost;
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
+  //       await User.findOneAndUpdate(
+  //         { _id: context.user._id },
+  //         { $pull: { posts: deletePost._id } }
+  //       );
+  //       return deletePost;
+  //     }
+  //     throw new AuthenticationError("You need to be logged in!");
+  //   },
   },
 };
 
