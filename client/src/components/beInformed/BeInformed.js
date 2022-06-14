@@ -47,8 +47,8 @@ const BeInformed = () => {
             </div>
          <h3>{title}</h3>
           <div className='beInformed_item-cta'>
-          <a href={place}  className='btn' target='_blank'>Place</a>
-          <a href={demo} className='btn btn-primary' target='_blank'>Video</a>
+          <a href={place}  className='btn' target='_blank'>Help</a>
+          <a href={demo} className='btn btn-primary' target='_blank'>Info</a>
           </div>
         </article>
            )
