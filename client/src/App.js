@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-import React from 'react';
-import Login from "./components/Form/LoginForm";
-import Signup from "./components/Form/SignupForm";
-=======
-//Importing these files to display
+
 import React, { useCallback } from "react";
-import Login from "./components/form/LoginForm";
-import Signup from "./components/form/SignupForm";
->>>>>>> d9a7bd5520d8ac107cf02e72595931fe9a2ad01b
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apollo/client';
-import Navbar from'./components/landingpage/Navbar';
-import "./app.css"
-import yoga from './images/yoga.jpg';
-<<<<<<< HEAD
-import React from "react";
+//Importing these files to display
+
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";
 import {
@@ -22,11 +10,9 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
 import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
 import yoga from "./images/yoga.jpg";
-=======
 import { useAuthState } from "react-firebase-hooks/auth";
 // import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
@@ -47,7 +33,6 @@ export let posts = [{
   postId: 'DEFAULT_POST',
   avatarURL: logo
 }];
->>>>>>> d9a7bd5520d8ac107cf02e72595931fe9a2ad01b
 
 const httpLink = createHttpLink({ uri: "graphql" });
 
