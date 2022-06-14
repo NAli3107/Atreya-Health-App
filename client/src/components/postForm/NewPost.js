@@ -44,7 +44,7 @@ const onUpdate = ({
     const NewPost = () => {
 
         return(
-    <div>BUM
+    <div>
 
     {/* const handleUpdate = (e) => {
         e.preventDefault();
