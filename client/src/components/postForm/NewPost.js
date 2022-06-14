@@ -37,8 +37,17 @@ const onUpdate = ({
     // author: currentUser.displayName ? currentUser.displayName : 'Demo User' 
   });
 
-}
 
+
+const addPost= ({
+    // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
+    title: magic(event.target[0].value),
+    description: magic(event.target[1].value),
+    // avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
+    timestamp: new Date().toISOString(),
+    // author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
+  })
+}
 
 
     const NewPost = () => {

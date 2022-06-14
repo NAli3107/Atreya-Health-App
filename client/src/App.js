@@ -59,6 +59,7 @@ function App() {
         </Routes>
           </Router>
         <img src={yoga} />
+      
       </div>
     </ApolloProvider>
   );
