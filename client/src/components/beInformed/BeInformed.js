@@ -10,21 +10,21 @@ const data = [
   id: 1,
   image: IMG1,
   title: 'Mind  image by John Hain',
-  place: 'https://www.tripadvisor.co.uk/Attractions-g187063-Activities-Leamington_Spa_Warwickshire_England.html', 
-  demo: 'https://baronseden.com/hoar-cross-hall'
+  place: 'https://www.psychotherapy.org.uk/', 
+  demo: 'https://www.mind.org.uk/'
 },
 {
   id: 2,
   image: IMG2,
   title: 'Body',
-  place: 'https://www.tripadvisor.co.uk/Attractions-g187063-Activities-Leamington_Spa_Warwickshire_England.html', 
-  demo: 'https://baronseden.com/hoar-cross-hall'
+  place: 'https://www.arbonne.com/gb/en/arb/jeanmcleod/cart?shareId=8821428899367', 
+  demo: 'https://youtu.be/YFcSDbKbPn8'
 },
 {
   id: 3,
   image: IMG3,
   title: 'Spirit',
-  place: 'https://www.tripadvisor.co.uk/Attractions-g187063-Activities-Leamington_Spa_Warwickshire_England.html', 
+  place: 'https://www.malvern-hills.co.uk/', 
   demo: 'https://baronseden.com/hoar-cross-hall'
   },
   
