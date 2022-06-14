@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/atreyaHealth', {
+const mongoURL = process.env.MONGODB_URL || 'mongodb://localhost/atreyaHealth'
+console.log(mongoURL)
+mongoose.connect(mongoURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
