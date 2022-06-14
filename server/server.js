@@ -1,17 +1,27 @@
 const express = require("express");
 const db = require("./config/connection");
 const { ApolloServer } = require("apollo-server-express");
+const {
+  ApolloServerPluginLandingPageGraphQLPlayground,
+} = require("apollo-server-core");
 const path = require("path");
 const { typeDefs, resolvers } = require('./schemas');
+const {authMiddleware} = require('./schemas/utils/auth');
 // import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-//   context: authMiddleware,
-});
+const PORT = process.env.PORT || 4000;
+ const server = new ApolloServer({
+   typeDefs,
+   resolvers,
+   // introspection: true,
+   playground: true,
+   context: authMiddleware,
+   plugins: [ApolloServerPluginLandingPageGraphQLPlayground],
+
+   // introspection: true,
+   // playground: true,
+ });
 
 // app.use(cors());
 
@@ -27,6 +37,7 @@ app.get("/", (req, res) => {
 });
 
 const startApolloServer = async (typeDefs, resolvers) => {
+ 
   await server.start();
   server.applyMiddleware({ app });
 

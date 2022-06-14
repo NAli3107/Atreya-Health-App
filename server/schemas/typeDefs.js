@@ -1,7 +1,39 @@
+// const { gql } = require("apollo-server-express");
+
+// const typeDefs = gql`
+// type Query {
+//     dummy: String
+//   }
+// `;
+
+// module.exports = typeDefs;
+
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type Post {
+  type User {
+    _id: ID!
+    email: String!
+    password: String!
+  }
+  type Auth {
+    _id: ID!
+    user: User
+  }
+  type Chatbot {
+    question: String!
+    answer: String!
+  }
+  type Query {
+    me: User
+    chatbot(question: String!): Chatbot
+  }
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+  }
+
+  type Post {
     postId: ID!
     title: String
     message: String
