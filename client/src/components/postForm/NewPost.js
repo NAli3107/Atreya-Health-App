@@ -80,6 +80,10 @@ const NewPost = () => {
             id="post-msg"
             className="form-secondary"
             placeholder="Then tell everyone what you're thinking..."
+            name="message"
+            onChange={handleInputChange}
+            value={userFormData.message}
+            required
           ></textarea>
           <button type="submit">Post to your Public Wall!</button>
         </form>
