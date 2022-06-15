@@ -4,7 +4,13 @@ class ActionProvider {
       this.createChatBotMessage = createChatBotMessage;
       this.setState = setStateFunc;
     }
-
+    greet = () => {
+      const message = this.createChatBotMessage(
+        "Hey! Thank you for chatting with us today! We have plenty of resources to get you started.. "
+        )
+        this.updateChatbotState(message);
+    }
+  
     handleHealthList = () => {
       const message = this.createChatBotMessage(
         "Having a healthy lifestyle can make you feel better mentally and physically, it can help lift your mood and makes you feel in control of your life! We've got the following resources for you on healthy living:",
@@ -48,7 +54,13 @@ class ActionProvider {
         this.updateChatbotState(message);
       };
 
-
+      handleGoodbye = () => {
+        const message = this.createChatBotMessage(
+          "Thank you for chatting with us today! We hope you found our resources helpful, please remember to always speak to a professional for medical advice.",
+        );
+    
+        this.updateChatbotState(message);
+      };
     updateChatbotState(message) {
   
       this.setState((prevState) => ({

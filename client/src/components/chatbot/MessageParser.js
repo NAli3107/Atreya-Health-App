@@ -5,10 +5,26 @@ class MessageParser {
     }
   
     parse(message) {
-      const messageTitle = message.toLowerCase().trim();
-  // define all the login part here 
-      if (messageTitle.includes("1") || messageTitle.includes("Healthy living") || messageTitle.includes("healthy") || messageTitle.includes("living")) {
+      const lowerCaseMessage = message.toLowerCase();
+  
+      if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hey")|| lowerCaseMessage.includes("hi")) {
         this.actionProvider.greet();
+      }
+  
+      if (lowerCaseMessage.includes("health")) {
+        this.actionProvider.handleHealthList();
+      }
+      if (lowerCaseMessage.includes("stress") || lowerCaseMessage.includes("worried") || lowerCaseMessage.includes("anxiety")) {
+        this.actionProvider.handleStressList();
+      }
+      if (lowerCaseMessage.includes("mindful")) {
+        this.actionProvider.handleMindfulList();
+      }
+      if (lowerCaseMessage.includes("safety")||lowerCaseMessage.includes("safe")) {
+        this.actionProvider.handleSafetyList();
+      }
+      if (lowerCaseMessage.includes("thank you")||lowerCaseMessage.includes("bye")||lowerCaseMessage.includes("thank")) {
+        this.actionProvider.handleGoodbye();
       }
     }
   }
