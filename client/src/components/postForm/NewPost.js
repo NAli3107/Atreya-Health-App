@@ -6,7 +6,7 @@ import WallForm from "./Wall"
 // import { authentication } from "../services/firebase-config";
 
 import './Newpost.css';
-
+import {CREATE_POST} from "../../utils/mutations"
 // import anonymous from '../images/default.png';
 
 
@@ -26,25 +26,16 @@ const handleUpdate = async (event) => {
     event.preventDefault();
 console.log("button clicked")
 
+//take the title message etc and save to db  - new post.js
+//qurey - all the posts on the wall and retreving db - in wall.js
+
 const onUpdate = ({
-    // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
-    title: event.target[0].value,
-    description: magic(event.target[1].value),
-    // avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
-    timestamp: new Date().toISOString(),
-    // author: currentUser.displayName ? currentUser.displayName : 'Demo User' 
+   
   });
 
+   const addPost= ({
 
-
-const addPost= ({
-    // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
-    title: magic(event.target[0].value),
-    description: magic(event.target[1].value),
-    // avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
-    timestamp: new Date().toISOString(),
-    // author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
-  })
+   })
 }
 
 
@@ -52,28 +43,6 @@ const addPost= ({
 
         return(
     <div>
-
-    {/* const handleUpdate = (e) => {
-        e.preventDefault();
-
-        onUpdate({
-            // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
-            title: e.target[0].value,
-            description: magic(e.target[1].value),
-            avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
-            timestamp: new Date().toISOString(),
-            author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
-          });
-
-          addPost({
-            // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
-            title: magic(e.target[0].value),
-            description: magic(e.target[1].value),
-            avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
-            timestamp: new Date().toISOString(),
-            author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
-          })
-    } */}
 
      <div id="newpost">
         <h1>What is on your <span>mind</span>?</h1>
