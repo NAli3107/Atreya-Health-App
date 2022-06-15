@@ -13,7 +13,6 @@ scalar Date
     _id: ID!
     title: String
     message: String
-    creator: String
     createdAt: Date
   }
   input postInput {
@@ -37,7 +36,7 @@ scalar Date
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    createPost(title: String!, message: String!, creator: String!): Post
+    createPost(title: String!, message: String!): Post
     editPost(postId: ID, title: String, message: String, creator: String): Post
     removePost(postId: ID!): Post
   }

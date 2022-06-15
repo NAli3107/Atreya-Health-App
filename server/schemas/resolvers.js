@@ -68,12 +68,12 @@ const resolvers = {
       console.log("from login", user);
       return { token, user };
     },
-    createPost: async (parent, { title, message, creator }, context) => {
-      // if (context.user) {
+    createPost: async (parent, { title, message }, context) => {
+      if (context.user) {
         const newPost = await Posts.create({
           title,
           message,
-          creator,
+          creator: context.user.username,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -83,8 +83,8 @@ const resolvers = {
 
         console.log(newPost);
         return newPost;
-      // }
-      // throw new AuthenticationError("You need to be logged in!");
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   //   editPost: async (parent, { postId, title, message, creator }, context) => {
   //     if (context.user) {
