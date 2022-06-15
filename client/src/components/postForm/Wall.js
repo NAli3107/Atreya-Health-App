@@ -1,10 +1,9 @@
 import React from "react";
-// import Post from './Post.js';
-import '../components/postForm/Wall';
+import Post from './Post.js';
+import './Wall.css';
 
 const Wall = ({ posts }) => {
     return <div id="wall">
-      <h1>HOME</h1>
         <h1>Public Wall</h1>
         <h2>You can view the recent posts made by members of our community.</h2>
 
