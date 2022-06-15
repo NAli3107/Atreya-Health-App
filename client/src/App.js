@@ -17,11 +17,6 @@ import "./app.css";
  import StayConnected from "./pages/StayConnected"
 import NewPost from "./components/postForm/NewPost"
 import Dashboard from "./components/postForm/Dashboard"
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
