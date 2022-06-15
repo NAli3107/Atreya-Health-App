@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { Navbar, Nav, Modal, Tab } from 'react-bootstrap';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
@@ -9,11 +9,12 @@ import LoginForm from '../form/LoginForm';
 import "./navbar.css"
 import Auth from '../../utils/auth';
 import "./UserIn.css"
+  // import logoImg from '../../images/logo.jpg'
 
 
 const AppNavbar = () => {
-  // set modal display state
-  const [showModal, setShowModal] = useState(false);
+    // set modal display state
+   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -72,6 +73,9 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
+      <div>
+      <img src="" alt=""className='logoImg' />
+      </div>
       </div>
    
     </>
@@ -93,3 +97,10 @@ function CustomLink({ to, children, ...props }) {
     </li>
   )
 }
+// class logo extends Component{
+//     render(){
+//         return (
+//             <img src={logoImg} alt={"logoImg"} />
+//         )
+//     }
+// }
