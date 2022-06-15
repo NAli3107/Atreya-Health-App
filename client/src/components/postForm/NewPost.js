@@ -77,8 +77,7 @@ const addPost= ({
 
      <div id="newpost">
         <h1>What is on your <span>mind</span>?</h1>
-//         <form class="new-post-form">
-        {<form onSubmit={handleUpdate}>}
+    <form onSubmit={handleUpdate}>
             <textarea id="post-title" className="form-primary" placeholder="Title your post!"></textarea>
             <textarea id="post-msg" className="form-secondary" placeholder="Then tell everyone what you're thinking..."></textarea>
             <button type="submit">Post to your Public Wall!</button>
