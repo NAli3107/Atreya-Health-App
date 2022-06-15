@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./components/landingpage/Logo"
 // hn
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";

@@ -1,5 +1,4 @@
 
-
 import React, { Component, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { Navbar, Nav, Modal, Tab } from 'react-bootstrap';
@@ -9,7 +8,7 @@ import LoginForm from '../form/LoginForm';
 import "./navbar.css"
 import Auth from '../../utils/auth';
 import "./UserIn.css"
-  // import logoImg from '../../images/logo.jpg'
+
 
 
 const AppNavbar = () => {
@@ -73,9 +72,6 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-      <div>
-      <img src="" alt=""className='logoImg' />
-      </div>
       </div>
    
     </>

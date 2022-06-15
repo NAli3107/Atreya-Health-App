@@ -55,11 +55,11 @@
         margin: 0px;
         padding: 0;
       }
- li {
+li {
         display: inline;
         list-style: none;
         font-size: 18px;
-       padding: 10px;
+        padding: 10px;
         line-height: 80px;
       }
       .nav-links {
@@ -82,15 +82,12 @@
 .logo{
         font-weight: 500;
         font-size: 1.4rem;
-        font-family:;
+        font-size: 15px;
         color: #6D3744;
         cursor: pointer;
         background: var(--gradient);
-        background-clip: ;
+       
     }
-    .logoImg{
-        width: 40px;
-        height: 40px;
-        
-        border-radius: 50%;
-    }
+     .logoImg{
+      background-image: url(../../images/logo.jpg);
+    } 
