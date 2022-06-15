@@ -6,6 +6,7 @@ import Navbar from'./components/landingpage/Navbar';
 import "./app.css"
 
 
+
 const httpLink = createHttpLink({uri: "graphql"});
 
 const client = new ApolloClient({
@@ -22,7 +23,10 @@ function App() {
       <Navbar/>
       <Login/>
   <Signup/>
-  <div className='yoga'>image</div>
+  <div className='hero'>
+      <h2>“There is a crack in everything, that’s how the light gets in” ― Leonard Cohen</h2>
+           
+  </div>
   
     </div>
     </ApolloProvider>

@@ -6,6 +6,7 @@
     top: 0;
     z-index: 999;
     background-color: rgb(255, 255, 255);
+    max-width: 1000
 }
 
 .navbarWrapper{
