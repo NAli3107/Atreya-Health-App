@@ -1,8 +1,12 @@
 import React from "react";
-import Auth from "../../utils/auth";
+
 import WallForm from "./Wall";
+
+// import { createPost } from "../services/firebase";
+// import { authentication } from "../services/firebase-config";
+
 import "./Newpost.css";
-import { CREATE_POST } from "../../utils/mutations";
+
 // import anonymous from '../images/default.png';
 
 // function handleSubmission(e) {
@@ -10,80 +14,53 @@ import { CREATE_POST } from "../../utils/mutations";
 //     createPost('test123');
 // }
 
-// function magic(input) {
-//   input = input.replace(/&/g, "&amp;");
-//   input = input.replace(/</g, "&lt;");
-//   input = input.replace(/>/g, "&gt;");
-//   return input;
-// }
+function magic(input) {
+  input = input.replace(/&/g, "&amp;");
+  input = input.replace(/</g, "&lt;");
+  input = input.replace(/>/g, "&gt;");
+  return input;
+}
 
-//take the title message etc and save to db  - new post.js
-//qurey - all the posts on the wall and retreving db - in wall.js
+const handleUpdate = async (event) => {
+  event.preventDefault();
+  console.log("button clicked");
+
+  const onUpdate = {
+    // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
+    title: event.target[0].value,
+    description: magic(event.target[1].value),
+    // avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
+    timestamp: new Date().toISOString(),
+    // author: currentUser.displayName ? currentUser.displayName : 'Demo User'
+  };
+
+  const addPost = {
+    // id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
+    title: magic(event.target[0].value),
+    description: magic(event.target[1].value),
+    // avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
+    timestamp: new Date().toISOString(),
+    // author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User'
+  };
+};
 
 const NewPost = () => {
-  const [userFormData, setUserFormData] = useState({ title: "", message: "" });
-  const [validated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-
-  const [post, { error }] = useMutation(CREATE_POST);
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData({ ...userFormData, [name]: value });
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-    console.log(token);
-    if (!token) {
-      return false;
-    }
-    try {
-      const { data } = await post({
-        variables: { ...userFormData },
-      });
-    } catch (error) {
-      console.error(error);
-    }
-    setUserFormData({
-      title: "",
-      message: "",
-    });
-  };
-
   return (
     <div>
       <div id="newpost">
         <h1>
           What is on your <span>mind</span>?
         </h1>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleUpdate}>
           <textarea
             id="post-title"
             className="form-primary"
             placeholder="Title your post!"
-            name="title"
-            onChange={handleInputChange}
-            value={userFormData.title}
-            required
           ></textarea>
           <textarea
             id="post-msg"
             className="form-secondary"
             placeholder="Then tell everyone what you're thinking..."
-            name="message"
-            onChange={handleInputChange}
-            value={userFormData.message}
-            required
           ></textarea>
           <button type="submit">Post to your Public Wall!</button>
         </form>
