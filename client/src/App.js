@@ -15,6 +15,9 @@ import "./app.css";
  import StayInformed from "./pages/Stayinformed"
  import Home from "./pages/Home"
  import StayConnected from "./pages/StayConnected"
+import NewPost from "./components/postForm/NewPost"
+import Dashboard from "./components/postForm/Dashboard"
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./components/form/LoginForm";
@@ -49,11 +52,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/stayinformed" element={<StayInformed />} />
           <Route path="/stayconnected" element={<StayConnected />} />
+          <Route path="/Newpost" element={<NewPost />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
           </Router>
         <img src={yoga} />
+      
       </div>
     </ApolloProvider>
   );
