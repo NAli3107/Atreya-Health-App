@@ -3,20 +3,16 @@ import './BeInformed/BeInformed.css'
 import IMG1 from '../images/AWS.jpeg'
 import IMG2 from '../images/jogger.jpeg'
 import IMG3 from '../images/silicon-canal.jpeg'
-import { Navbar, Nav, Modal, Tab } from 'react-bootstrap';
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import MindWords from "./BeInformed/mind"
-import BodyWords from "./BeInformed/body"
-import SpiritWords from "./BeInformed/spirit"
+
 
 const data = [
   {
   id: 1,
   image: IMG1,
-  title: 'Mind  image by John Hain',
+  title: ' Mind',
   place: 'https://www.psychotherapy.org.uk/', 
   demo: 'https://www.mind.org.uk/',
-  test: <MindWords/>
+  test: "ENTER YOUR MIND STUFF"
 
 },
 {
@@ -25,7 +21,7 @@ const data = [
   title: 'Body',
   place: 'https://www.arbonne.com/gb/en/arb/jeanmcleod/cart?shareId=8821428899367', 
   demo: 'https://youtu.be/YFcSDbKbPn8',
-  test: <BodyWords/>
+  test: "ENTER YOUR BODY STUFF"
 },
 {
   id: 3,
@@ -33,14 +29,14 @@ const data = [
   title: 'Spirit',
   place: 'https://www.malvern-hills.co.uk/', 
   demo: 'https://baronseden.com/hoar-cross-hall',
-  test: <SpiritWords/>
+  test: "ENTER YOUR SPIRIT STUFF"
   },
   
 ]
 
 
 const BeInformed = () => {
-  const [showModal, setShowModal] = useState(false);
+
 
   return (
     <section id='portfolio' className='col-sm-4'>
@@ -57,9 +53,9 @@ const BeInformed = () => {
             </div>
          <h3>{title}</h3>
           <div className='beInformed_item-cta'>
-          <a href={place}  className='btn' target='_blank'>Help</a>
-          <a href={demo} className='btn btn-primary' target='_blank'>Info</a>
-          <a href={test} className='btn btn-primary' target='_blank'>test</a>
+          <a href={place}  className='btn' target='_blank'>Get help?</a>
+          <a href={demo} className='btn btn-primary' target='_blank'>Further Info</a>
+          <div>What is {title}? {test}</div>
           </div>
           </div>
       
