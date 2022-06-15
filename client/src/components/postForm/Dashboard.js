@@ -1,7 +1,7 @@
 
 import React from "react";
 import './dashboard.css';
-
+// TODO
 // import { timeAgo } from 'short-time-ago';
 const Post = ({ props }) => {
     return <div className="post">
@@ -11,6 +11,7 @@ const Post = ({ props }) => {
             <img src={"props.avatarURL"} alt="Author Avatar" />
             <p>{"props.author"}</p>
         </div>
+//     TODO
         {/* <p><em>Posted - {timeAgo(new Date(props.timestamp))}</em></p> */}
     </div>
 }
