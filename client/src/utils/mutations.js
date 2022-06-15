@@ -25,3 +25,11 @@ export const ADD_USER = gql`
   }
 `;
 
+export const CREATE_POST = gql `
+mutation CreatePost($title: String!, $message: String!, $creator: String!, $selectedFile: String!) {
+  createPost(title: $title, message: $message, creator: $creator, selectedFile: $selectedFile) {
+    title
+    message
+  }
+}
+`
