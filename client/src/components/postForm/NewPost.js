@@ -8,9 +8,7 @@ import WallForm from "./Wall"
 import './Newpost.css';
 
 // import anonymous from '../images/default.png';
-// import { addPost } from "../services/firebase";
 
-// import { createPost } from '../services/firebase.js';
 
 // function handleSubmission(e) {
 //     e.preventDefault();
