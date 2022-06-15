@@ -1,0 +1,32 @@
+.chatbox{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.chat{
+    width: 50rem;
+}
+
+
+.react-chatbot-kit-chat-message-container {
+
+
+}
+.react-chatbot-kit-chat-container {
+    width: 100%;
+}
+
+.react-chatbot-kit-chat-bot-message {
+
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: medium;
+    position: relative;
+    width: 40rem;
+    margin-left: 0%;
+
+}

@@ -26,7 +26,7 @@ const AppNavbar = () => {
             <Nav className='ml-auto'>
            <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>     
-    
+        <li className="navbarIconBadge"> <CustomLink to="/chat">Chat with us</CustomLink></li>  
               {Auth.loggedIn() ? (
                 <>
                  <li className="navbarIconBadge">  <CustomLink to="/Newpost">Stay Connected</CustomLink></li>
