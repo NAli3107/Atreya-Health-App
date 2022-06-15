@@ -18,7 +18,8 @@ import "./app.css";
 import NewPost from "./components/postForm/NewPost"
 import Dashboard from "./components/postForm/Dashboard"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginForm from "./components/form/LoginForm";
+
+
 const httpLink = createHttpLink({ uri: "graphql" });
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
