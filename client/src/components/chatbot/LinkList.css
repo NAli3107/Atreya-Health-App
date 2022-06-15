@@ -1,21 +1,21 @@
 .link-list {
     padding: 0;
+    display: grid;
   }
   
   .link-list-item {
-background-color: pink;
+
 align-items: center;
     display: grid;
+
   }
   
   .link-list-item-url {
     padding: 0.5rem;
     border-radius: 25px;
     background: transparent;
-    border: 1px solid green;
     margin: 0.5rem;
     cursor: pointer;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
