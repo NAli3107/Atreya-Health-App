@@ -21,8 +21,7 @@ function App() {
     <ApolloProvider client={client}>
     <div>
       <Navbar/>
-      <Login/>
-  <Signup/>
+  
   <div className='hero'>
       <h2>“There is a crack in everything, that’s how the light gets in” ― Leonard Cohen</h2>
            
