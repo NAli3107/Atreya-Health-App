@@ -87,7 +87,7 @@ const NewPost = () => {
       </div>
 
 
-<div>{userFormData.title}dum and {userFormData.message}</div>
+<div>post data here: {userFormData.title} {userFormData.message}</div>
 
 
       <WallForm />
