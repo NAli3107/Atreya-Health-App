@@ -3,23 +3,29 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
-}
+} 
+#text{
+  text-align: center;
 
+}  
 .beInformed_item {
-    background: var(--color-bg-variant);
+    background:  #6D3744;
     padding: 1.3rem;
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition);  
+    width:300px;
 }
 
 .beInformed_item:hover {
-    border-color: var(--color-primary-variant);
-    background:transparent;
+    border-color: #6D3744;
+    background:#FAA0A0;
 }
 .beInformed-image {
     border-radius: 1.5rem;
     overflow: hidden;
+    width:50%;
+  
 
 }
 
@@ -39,19 +45,21 @@
 
 @media screen and (max-width: 1024px) { 
   .beInformed_container {
-    background: lime;
+
       grid-template-columns: 1fr 1fr;
       gap: 1.2rem;    
   } 
-}
+} 
 
 
 /* MEDIA QUERIES SMALL DEVICES*/
-@media screen and (max-width: 600px) {
+ @media screen and (max-width: 600px) {
 .beInformed_container {
 
     grid-template-columns: 1fr;
     gap: 1rem;
 
  }
-}
+} 
+
+
