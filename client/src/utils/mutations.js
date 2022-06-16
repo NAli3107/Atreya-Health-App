@@ -26,10 +26,11 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_POST = gql `
-mutation createPost($title: String!, $message: String!) {
-  createPost(title: $title, message: $message) {
+mutation createPost($title: String!, $message: String!, $creator: String!) {
+  createPost(title: $title, message: $message, creator: $creator) {
     title
     message
+    creator
   }
 }
 `
