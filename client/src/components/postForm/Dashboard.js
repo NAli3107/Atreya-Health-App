@@ -1,6 +1,7 @@
 
 import React from "react";
 import './dashboard.css';
+import NewPost from "./NewPost";
 // TODO
 // import { timeAgo } from 'short-time-ago';
 const Post = ({ props }) => {

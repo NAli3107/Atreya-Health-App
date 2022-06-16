@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Auth from "../../utils/auth";
-import WallForm from "./Wall";
 import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
@@ -87,20 +86,9 @@ const NewPost = () => {
       </div>
 
 
-<div>{userFormData.title}dum and {userFormData.message}</div>
+      
 
-
-      <WallForm />
-
-      <div className="post">
-        <h1>{[userFormData.title]}</h1>
-        <p>{userFormData.message}</p>
-        <div id="post-author">
-            <h3>{userFormData.creator}</h3>
-        </div>
-
-        {/* <p><em>Posted - {timeAgo(new Date(props.timestamp))}</em></p> */}
- </div> 
+      
     </div>
   );
 };

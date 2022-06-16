@@ -29,7 +29,7 @@ const AppNavbar = () => {
     
               {Auth.loggedIn() ? (
                 <>
-                 <li className="navbarIconBadge">  <CustomLink to="/Newpost">Stay Connected</CustomLink></li>
+                 <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
                  <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Dashboard</CustomLink></li>
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>

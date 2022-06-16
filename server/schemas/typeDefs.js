@@ -13,6 +13,7 @@ scalar Date
     _id: ID!
     title: String
     message: String
+    creator: String
     createdAt: Date
   }
   input postInput {
