@@ -1,5 +1,5 @@
 import React from "react";
-import Post from './Post.js';
+import Post from './Dashboard';
 import './Wall.css';
 
 const Wall = ({ posts }) => {
@@ -8,7 +8,7 @@ const Wall = ({ posts }) => {
         <h2>You can view the recent posts made by members of our community.</h2>
 
         <div id="post-list">TEST
-            {/* {posts.slice(0, 5).map(p => <Post key={p.postId} props={p} />)} */}
+            {/* {posts(0, 5).map(p => <Post key={p.postId} props={p} />)} */}
         </div>
     </div>
 }

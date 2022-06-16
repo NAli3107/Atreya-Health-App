@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from 'react';
 import Auth from "../../utils/auth";
 import WallForm from "./Wall";
 import "./Newpost.css";
+import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
+import { idbPromise } from '../../utils/helpers';
 // import anonymous from '../images/default.png';
 
 // function handleSubmission(e) {
@@ -34,6 +36,8 @@ const NewPost = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    // hn
+    // const cart = await idbPromise('cart', 'get')
 
     // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
@@ -43,14 +47,19 @@ const NewPost = () => {
     }
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
-    console.log(token);
+    console.log(token, "done something", userFormData.title, userFormData.message);
     if (!token) {
       return false;
     }
     try {
       const { data } = await post({
-        variables: { ...userFormData },
-      });
+        variables: { ...userFormData }});
+        // hn
+      //   const productData = data.post.products;
+
+      //   productData.forEach((item) => {
+      //     idbPromise('cart', 'delete', item);
+      // });
     } catch (error) {
       console.error(error);
     }
