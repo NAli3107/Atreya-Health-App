@@ -11,7 +11,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
- import yoga from "./images/yogo2.png";
+
  import StayInformed from "./pages/Stayinformed"
  import Home from "./pages/Home"
  import StayConnected from "./pages/StayConnected"
@@ -54,7 +54,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
           </Router>
-        <img src={yoga} />
+      
       
       </div>
     </ApolloProvider>
