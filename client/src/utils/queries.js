@@ -31,10 +31,10 @@ export const QUERY_POSTS = gql`
   query getPosts {
     posts {
       _id
-      title: String
-      message: String
-      creator: String
-      createdAt: String
+      title
+      message
+      creator
+      createdAt
     }
   }
 `;
