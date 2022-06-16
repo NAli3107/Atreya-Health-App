@@ -11,7 +11,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
-
  import StayInformed from "./pages/Stayinformed"
  import Home from "./pages/Home"
  import StayConnected from "./pages/StayConnected"
@@ -44,6 +43,10 @@ function App() {
         {/* hn */}
       <Router>
 <Navbar />
+<div className='hero'>
+      <h2>“There is a crack in everything, that’s how the light gets in” ― Leonard Cohen</h2>
+
+  </div>
 <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stayinformed" element={<StayInformed />} />
@@ -52,7 +55,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-        </Routes>
+          </Routes>
           </Router>
       
       

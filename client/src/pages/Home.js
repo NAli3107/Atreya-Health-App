@@ -6,7 +6,6 @@ import yoga from "../images/yogo2.png";
 const Wall = ()   => {
     return(
         <div>
-        
 <img src={yoga} />
 </div>
 )
