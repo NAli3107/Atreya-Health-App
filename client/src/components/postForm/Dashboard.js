@@ -11,7 +11,7 @@ const Post = ({ props }) => {
             <img src={"props.avatarURL"} alt="Author Avatar" />
             <p>{"props.author"}</p>
         </div>
-//     TODO
+
         {/* <p><em>Posted - {timeAgo(new Date(props.timestamp))}</em></p> */}
     </div>
 }
