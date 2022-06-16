@@ -5,24 +5,11 @@ import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
 import { idbPromise } from '../../utils/helpers';
-// import anonymous from '../images/default.png';
 
-// function handleSubmission(e) {
-//     e.preventDefault();
-//     createPost('test123');
-// }
-
-// function magic(input) {
-//   input = input.replace(/&/g, "&amp;");
-//   input = input.replace(/</g, "&lt;");
-//   input = input.replace(/>/g, "&gt;");
-//   return input;
-// }
-
-//take the title message etc and save to db  - new post.js
-//qurey - all the posts on the wall and retreving db - in wall.js
 
 const NewPost = () => {
+
+
   const [userFormData, setUserFormData] = useState({ title: "", message: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -69,6 +56,7 @@ const NewPost = () => {
     });
   };
 
+
   return (
     <div>
       <div id="newpost">
@@ -98,7 +86,21 @@ const NewPost = () => {
         </form>
       </div>
 
+
+<div>{userFormData.title}dum and {userFormData.message}</div>
+
+
       <WallForm />
+
+      <div className="post">
+        <h1>{[userFormData.title]}</h1>
+        <p>{userFormData.message}</p>
+        <div id="post-author">
+            <p>{"username"}</p>
+        </div>
+
+        {/* <p><em>Posted - {timeAgo(new Date(props.timestamp))}</em></p> */}
+ </div> 
     </div>
   );
 };
