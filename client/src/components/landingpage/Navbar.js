@@ -18,19 +18,19 @@ const AppNavbar = () => {
   return (
     <>
             <div  className="navbarWrapper">
-            <div className="navbarLeft">
+            {/* <div className="navbarLeft">
                     <span className="logo">Atreya</span>
-                </div>
+                </div> */}
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>
            <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>     
-    
+        <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
               {Auth.loggedIn() ? (
                 <>
-                 <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
-                 <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Dashboard</CustomLink></li>
+                
+                 <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Create a Post</CustomLink></li>
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>
               ) : 

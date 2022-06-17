@@ -77,9 +77,9 @@ console.log("button clicked")
                 value={userFormData.username}
                 required
               />
-              <Form.Control.Feedback type="invalid">
+              {/* <Form.Control.Feedback type="invalid">
                 Username is required!
-              </Form.Control.Feedback>
+              </Form.Control.Feedback> */}
             </Form.Group>
             <br></br>
             <Form.Group>
@@ -93,9 +93,9 @@ console.log("button clicked")
                 value={userFormData.email}
                 required
               />
-              <Form.Control.Feedback type="invalid">
+              {/* <Form.Control.Feedback type="invalid">
                 Email is required!
-              </Form.Control.Feedback>
+              </Form.Control.Feedback> */}
         
             </Form.Group>
             <br></br>
@@ -110,11 +110,11 @@ console.log("button clicked")
                 value={userFormData.password}
                 required
               />
-              <Form.Control.Feedback type="invalid">
+              {/* <Form.Control.Feedback type="invalid">
                 Password is required!
-              </Form.Control.Feedback>
+              </Form.Control.Feedback> */}
             </Form.Group>
-            <div class ="button">
+            <div class ="loginbtn">
             <Button
               disabled={
                 !(

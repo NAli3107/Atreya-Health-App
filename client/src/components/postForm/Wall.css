@@ -1,7 +1,4 @@
-/* h1 {
-    margin: 0px;
-    padding: 0px;
-} */
+
 #wall {
     background-color: white;
     color: black;
@@ -30,14 +27,101 @@
 }
 
 #post-list {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
 }
 
+h2{
+  font-weight: lighter;
+}
 
 .h3{
     color:  black important!;
 }
+
+h5{
+    color:black;
+}
+
+p{
+    color:black;
+}
+
+.cardbox{
+
+
+}
+
+.card {
+
+    display: block;
+    margin: 60px auto;
+    box-shadow: 10px 5px 40px 20px darken(#341cac, 5%);
+    transition: .25s;
+
+  }
+
+  .card-text{
+    margin:0;
+  }
+
+  .pbody{
+    padding-top: 2rem;
+    margin: 0px; 
+    font-family:cursive;
+
+  }
+
+
+  .card-title{
+  display: flex;
+    justify-content: center;
+    background-color: #6D3744;
+    border-bottom: solid black;
+    color:white
+  }
+
+  .card-subtitle{
+    font-style: italic;
+    font-weight: lighter;
+  }
+
+  .card-body {
+
+    padding: 20px;
+    font-family: cursive;
+
+  }
+
+  .thumbnail1{
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px black;
+   background-color:#CA8A8A;
+
+
+  }
+
+
+.psign{
+  font-size: 18px;
+  font-style: italic;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.card-text{
+margin:3rem
+}
+
+@media screen and (max-width: 500px) {
+.card-text{
+  margin:0;
+  font-size: small;
+}
+
+.card-subtitle{
+  font-size: small;
+}
+
+  }

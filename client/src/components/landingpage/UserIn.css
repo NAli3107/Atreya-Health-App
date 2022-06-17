@@ -32,12 +32,13 @@ h1{
     text-align: center;
   }
 
-  .button {
+  .loginbtn {
 
     display: flex;
     justify-content: center;
     padding: 1rem;
     font-weight: bolder;
+    width: 5rem;
   }
 
   .sign{
@@ -46,14 +47,19 @@ h1{
   }
 
   #signup{
-    margin-top: -29rem;
+    margin-top: -31rem;
     margin-left:25rem;
   
   }
 
-button{
-  width: 1rem;
+.loginbtn .btn {
+  width: 10rem;
   height: 1rem;
+  background-color: #6D3744;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
 }
 .btn{
 
