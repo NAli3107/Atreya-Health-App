@@ -9,14 +9,17 @@ import "./Chatbox.css"
 const Chat = () => {
     return (
       
-     
+      <div className="chatting">
+        <h1 className="letschat">Lets chat!!</h1>
+        <h2>Use the chatbot below to chat to an Atreya professional</h2>
       <div className="chatbox">
 
-        <Chatbot className="chat"
+   <Chatbot className="chat"
           config={config}
           actionProvider={ActionProvider}
           messageParser={MessageParser}
         />
+      </div>
       </div>
     );
 };

@@ -29,9 +29,7 @@ import LinkList from "./LinkList";
 
 const config = {
     botName: "Atreya",
-// initialMessages:[
-//   createChatBotMessage("humas test")
-// ],
+
   initialMessages: [
     createChatBotMessage("Hey there! Thank you for popping up today! Choose a topic to find out more about:", {
       widget: "learningOptions",
