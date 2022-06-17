@@ -20,13 +20,9 @@ const typeDefs = gql`
     _id: ID!
     user: User
   }
-  type Chatbot {
-    question: String!
-    answer: String!
-  }
+  
   type Query {
     me: User
-    chatbot(question: String!): Chatbot
   }
   type Mutation {
     login(email: String!, password: String!): Auth

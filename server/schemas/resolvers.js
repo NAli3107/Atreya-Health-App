@@ -13,14 +13,7 @@ const resolvers = {
       // }
       // throw new AuthenticationError("You need to be logged in!");
     },
-    chatbot: async (parent, {question}, context) => {
-      
-      const chats = [{ question: "hi", answer: "what'app" }];
-      const filterChat = chats.filter((chat)=>{
-        return chat.question === question.toLowerCase().trim();
-      })
-      return filterChat[0]
-    },
+   
   },
   Mutation: {
     addUser: async (parent, args) => {
