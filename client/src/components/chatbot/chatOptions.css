@@ -1,0 +1,14 @@
+.learning-options-container {
+  display: grid;
+
+}
+
+.learning-option-button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: transparent;
+  border: 1px solid green;
+  margin: 0.5rem;
+  cursor: pointer;
+
+}
