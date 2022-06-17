@@ -1,0 +1,22 @@
+.link-list {
+  padding: 0;
+  display: grid;
+}
+
+.link-list-item {
+
+align-items: center;
+  display: grid;
+
+}
+
+.link-list-item-url {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: transparent;
+  margin: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

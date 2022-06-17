@@ -4,8 +4,8 @@
      padding: 0px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: rgb(255, 255, 255);
+    justify-content: end;
+    background-color: #ECE2E2;
 } 
 
  .navbarIconBadge{
@@ -58,13 +58,14 @@
  li {
         display: inline;
         list-style: none;
-        font-size: 18px;
        padding: 10px;
-        line-height: 80px;
+        line-height: 50px;
+        text-decoration: none;
       }
       .nav-links {
         color: white;
         text-decoration: none;
+
       }
       .nav-links-mobile {
         color: white;
@@ -79,3 +80,13 @@
       li:hover .nav-links-mobile {
         color: black;
       }
+
+      @media screen and (max-width: 500px) {
+        .navbarWrapper{
+          margin:0;
+          font-size: small;
+        }
+        li{
+    list-style: none;
+        }
+          }

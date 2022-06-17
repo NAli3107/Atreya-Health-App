@@ -1,25 +1,47 @@
+
+    #portfolio{
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+
+    }
+
+
 .beInformed_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
 
-}
-
+} 
+#text{
+  text-align: center;
+  margin: 0px;
+  font-size: xx-large;
+}  
 .beInformed_item {
-    background: var(--color-bg-variant);
+    background:  #6D3744;
     padding: 1.3rem;
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition);  
+    width:300px;
+    padding-bottom: 2rem;
+    height: 30rem;
 }
 
 .beInformed_item:hover {
-    border-color: var(--color-primary-variant);
-    background:transparent;
+    border-color: #6D3744;
+    background:#FAA0A0;
 }
 .beInformed-image {
     border-radius: 1.5rem;
     overflow: hidden;
+    width:50%;
+  
 
 }
 
@@ -32,26 +54,48 @@
   display:flex;
   gap: 1rem;
   margin-bottom: 1rem; 
- 
+ padding-top: 2rem;
 }
 
-/* MEDIA QUERIES MEDIUM DEVICES*/
+.testtext{
+    padding-bottom: 2rem;
+}
 
-@media screen and (max-width: 1024px) { 
+.psign2{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.titleBI{
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+
+.pictures{
+    padding:1px;
+}
+ @media screen and (max-width: 1024px) { 
   .beInformed_container {
-    background: lime;
+
       grid-template-columns: 1fr 1fr;
       gap: 1.2rem;    
   } 
-}
+} 
 
 
-/* MEDIA QUERIES SMALL DEVICES*/
-@media screen and (max-width: 600px) {
+/* MEDIA QUERIES SMALL DEVICES*/ 
+
+ @media screen and (max-width: 800px) {
 .beInformed_container {
 
     grid-template-columns: 1fr;
     gap: 1rem;
-
+display: initial;
  }
-}
+
+
+}  
+
+ 

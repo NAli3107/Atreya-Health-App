@@ -1,0 +1,58 @@
+.chatbox{
+
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.chat{
+  width: 50rem;
+
+}
+
+
+.react-chatbot-kit-chat-message-container {
+
+background-color: #CA8A8A;
+}
+.react-chatbot-kit-chat-container {
+
+  width: 100%;
+}
+
+.react-chatbot-kit-chat-bot-message {
+
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: medium;
+  position: relative;
+  width: 40rem;
+  margin-left: 0%;
+background-color: #6D3744;
+
+}
+
+.letschat{
+  display:flex ;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.chatting{
+
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+
+@media (max-width: 500px)  {
+.chatbox{
+  width: 100%;
+}
+}

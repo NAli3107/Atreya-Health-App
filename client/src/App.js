@@ -13,11 +13,10 @@ import Navbar from "./components/landingpage/Navbar";
 import "./app.css";
  import StayInformed from "./pages/Stayinformed"
  import Home from "./pages/Home"
- import StayConnected from "./pages/StayConnected"
+import WallForm from "./components/postForm/Wall"
 import NewPost from "./components/postForm/NewPost"
-import Dashboard from "./components/postForm/Dashboard"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import ChatBot from "./components/chatbot/chatbot";
 
 const httpLink = createHttpLink({ uri: "graphql" });
 const authLink = setContext((_, { headers }) => {
@@ -47,15 +46,19 @@ function App() {
 <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stayinformed" element={<StayInformed />} />
-          <Route path="/stayconnected" element={<StayConnected />} />
-          <Route path="/Newpost" element={<NewPost />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/stayConnected" element={<WallForm />} />
+          <Route path="/chat" element={<ChatBot />} />
+          <Route path="/dashboard" element={<NewPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           </Routes>
           </Router>
+<<<<<<< HEAD
       
       
+=======
+   
+>>>>>>> main
       </div>
     </ApolloProvider>
   );
