@@ -18,9 +18,9 @@ const AppNavbar = () => {
   return (
     <>
             <div  className="navbarWrapper">
-            <div className="navbarLeft">
+            {/* <div className="navbarLeft">
                     <span className="logo">Atreya</span>
-                </div>
+                </div> */}
                 
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>

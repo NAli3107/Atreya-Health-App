@@ -1,17 +1,16 @@
 import React from "react";
 // import Post from './Post.js';
 import '../components/postForm/Wall';
+import yoga3 from "../images/yogo3.png"
+import "./Home.css"
 
-const Wall = ({ posts }) => {
-    return <div id="wall">
-      <h1>HOME</h1>
-        <h1>Public Wall</h1>
-        <h2>You can view the recent posts made by members of our community.</h2>
+export default function Home() {
+    return (
+<div className="yogo">
+    <img src={yoga3}/>
+        
+  </div> 
+    )
 
-        <div id="post-list">TEST
-            {/* {posts.slice(0, 5).map(p => <Post key={p.postId} props={p} />)} */}
-        </div>
-    </div>
-}
+  }
 
-export default Wall;

@@ -69,7 +69,9 @@ p{
 
   .pbody{
     padding-top: 2rem;
-
+    margin: 0px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
   }
 
 
@@ -102,14 +104,14 @@ p{
 
   }
 
-  .edit{
-    width: 5rem;
-    height: 2rem;
-  }
 
 .psign{
   font-size: 18px;
   font-style: italic;
   margin: 0;
   padding-top: 2rem;
+}
+
+.card-text{
+
 }

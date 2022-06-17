@@ -37,7 +37,7 @@ textarea {
     border-right: 4px solid white;
     height: 45px;
     background-color: rgba(0,0,0,0.6);
-    padding: 13px 0;
+
     padding-left: 10px;
     overflow: hidden;
 }
@@ -77,3 +77,50 @@ textarea::-webkit-scrollbar-thumb {
     padding-bottom: 2rem;
     color: white;
 }
+
+/* edit delete option */
+
+.dashboardlist{
+    align-items: center;
+    width: 50rem;
+
+}
+
+.thumbnail1{
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px black;
+     background-color:#CA8A8A;
+     margin-bottom: 2rem;
+  width: 50%;
+  align-items: center;
+    }
+    .card-body {
+        font-size: larger;
+        padding: 20px;
+        font-family: cursive;
+    
+      }
+
+      .pbody{
+        padding-top: 2rem;
+    
+      }
+
+      .card-title2{
+        display: flex;
+        justify-content: center;
+        background-color: #6D3744;
+        border-bottom: solid black;
+        color:white;
+   
+      }
+
+      .edit{
+        width: 5rem;
+        height: 2rem;
+      }
+    
+      .postbutton{
+        height:4rem;
+      }

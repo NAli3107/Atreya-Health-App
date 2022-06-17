@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useQuery, gql } from "@apollo/client";
 import Auth from "../../utils/auth";
 import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
 import { idbPromise } from '../../utils/helpers';
-
+import { QUERY_POSTS } from "../../utils/queries";
 
 const NewPost = () => {
 
@@ -12,8 +13,9 @@ const NewPost = () => {
   const [userFormData, setUserFormData] = useState({ title: "", message: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-
+  const { loading, data } = useQuery(QUERY_POSTS);
   const [post, { error }] = useMutation(CREATE_POST);
+  const posts = data?.posts || [];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -82,15 +84,26 @@ const NewPost = () => {
             value={userFormData.message}
             required
           ></textarea>
-          <button type="submit">Post to your Public Wall!</button>
+          <button className= "postbutton" type="submit">Post to your Public Wall!</button>
         </form>
       </div>
 
+{/* see if u can edit n delete these */}
 
-      
+      <div id="dashboardlist">
+        Your posts
+      {posts.map((post) => (
+          <div class="thumbnail1 card-body">
+<h5>Your current title: </h5>
+        <h1 className="card-title2">{post.title}</h1>
+        <h5>Your current post: </h5>
+        <p className='pbody card-text'> {post.message}</p>
 
-      
     </div>
+    ))}
+
+</div>
+ </div>
   );
 };
 
