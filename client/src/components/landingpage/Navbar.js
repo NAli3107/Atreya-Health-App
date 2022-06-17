@@ -18,15 +18,13 @@ const AppNavbar = () => {
   return (
     <>
             <div  className="navbarWrapper">
-            {/* <div className="navbarLeft">
-                    <span className="logo">Atreya</span>
-                </div> */}
-                
+
       <Navbar bg='dark' variant='dark' expand='lg'>
             <Nav className='ml-auto'>
            <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>     
         <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
+        <li className="navbarIconBadge"> <CustomLink to="/chat">Chat with us</CustomLink></li>  
               {Auth.loggedIn() ? (
                 <>
                 
@@ -46,7 +44,7 @@ const AppNavbar = () => {
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
+
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton >
             <Modal.Title id='signup-modal'>
@@ -93,3 +91,4 @@ function CustomLink({ to, children, ...props }) {
     </li>
   )
 }
+
