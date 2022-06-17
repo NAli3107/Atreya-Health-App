@@ -17,7 +17,8 @@ import WallForm from "./components/postForm/Wall"
 import NewPost from "./components/postForm/NewPost"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Wall from "./pages/Home";
-
+// hn
+import Test from "./components/postForm/test"
 
 const httpLink = createHttpLink({ uri: "graphql" });
 const authLink = setContext((_, { headers }) => {
@@ -53,7 +54,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
           </Router>
-   
+   <Test/>
       </div>
     </ApolloProvider>
   );

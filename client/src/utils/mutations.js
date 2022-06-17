@@ -35,3 +35,23 @@ mutation createPost($title: String!, $message: String!) {
   }
 }
 `
+export const EDIT_POST = gql `
+mutation updatePost($title: String!, $message: String!) {
+  updatePost(title: $title, message: $message) {
+    title
+    message
+    creator
+    createdAt
+  }
+}
+`
+// export const DELETE_POST = gql `
+// mutation createPost($title: String!, $message: String!) {
+//   createPost(title: $title, message: $message) {
+//     title
+//     message
+//     creator
+//     createdAt
+//   }
+// }
+// `

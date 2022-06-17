@@ -4,8 +4,12 @@ import Auth from "../../utils/auth";
 import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
+import { EDIT_POST } from "../../utils/mutations";
 import { idbPromise } from '../../utils/helpers';
 import { QUERY_POSTS } from "../../utils/queries";
+// hn
+import {QUERY_SINGLE_POST} from "../../utils/queries";
+
 
 const NewPost = () => {
 
@@ -14,6 +18,12 @@ const NewPost = () => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const { loading, data } = useQuery(QUERY_POSTS);
+  // hn
+  const { edit } = useQuery(QUERY_SINGLE_POST);
+const editPost = useMutation(EDIT_POST);
+// hn
+const editthepost= data?.posts || [];
+
   const [post, { error }] = useMutation(CREATE_POST);
   const posts = data?.posts || [];
 
