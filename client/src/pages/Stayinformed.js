@@ -41,33 +41,39 @@ const BeInformed = () => {
   return (
     <section id='portfolio' className='col-sm-4'>
       
-      <h2 id ='text'>Be Informed</h2>
-
+      <h1 id ='text'>BE INFORMED</h1>
+      <div className='psign2'>
+<p className="psign"> Information is key, always seek professional advice if you have any medical/health questions, below are some resources you may find useful </p>
+</div>
       <div className=' beInformed_container'>
        {
          data.map(({id, image, title, place, demo, test})=> {
            return (
-          <div>
-            {/* <img src={IMG1} /> */}
-         
+            <div class="card">
+            <div class="col-sm-4">
+            <div className='thumbnail'>
+      <div key={id} className='beInformed_item'> 
+             <h3 className='titleBI'>{title}</h3>
+             <div className='testtext'> {test}</div>
 
-      <div key={id} className='beInformed_item'>
-        
-             <h3>{title}</h3>
-             <div> {test}</div>
+             
           <div className='beInformed_item-image'>
+<div className="pictures" >
             <img src={image} alt={title}/>
             </div>
-    
+            </div>
+
+
           <div className='beInformed_item-cta'>
           <a href={place}  className='btn' target='_blank'>Get help?</a>
           <a href={demo} className='btn btn-primary' target='_blank'>Further Info</a> 
- 
-
-          </div>
           </div>
       
-</div>
+
+          </div>
+      </div>
+      </div>
+      </div>
            )
          })
        }

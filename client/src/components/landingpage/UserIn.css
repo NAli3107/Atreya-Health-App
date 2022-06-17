@@ -5,6 +5,7 @@
     box-shadow: 5px 5px 5px black;
     justify-content: center;
     width: fit-content;
+    background-color: #CA8A8A;
   }
 h1{
     padding:1rem;
@@ -47,9 +48,9 @@ h1{
   }
 
   #signup{
-    margin-top: -31rem;
+    margin-top: -28.5rem;
     margin-left:25rem;
-  
+
   }
 
 .loginbtn .btn {
