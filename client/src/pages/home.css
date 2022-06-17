@@ -1,0 +1,11 @@
+
+ .content{
+    position: absolute;
+    width: 100%;
+    height: 100;
+    object-fit: cover;
+    background-color: rgb(51, 51, 136);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 

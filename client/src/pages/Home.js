@@ -1,12 +1,12 @@
 import React from "react";
 // import Post from './Post.js';
 import '../components/postForm/Wall';
-import yoga from "../images/yogo2.png";
-
+import yoga from "../images/yogo3.png";
+import "./home.css"
 const Wall = ()   => {
     return(
-        <div>
-<img src={yoga} />
+        <div className="content">
+<img className="pic" src={yoga} />
 </div>
 )
 }
