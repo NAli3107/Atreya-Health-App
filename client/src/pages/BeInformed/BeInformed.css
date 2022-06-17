@@ -1,7 +1,7 @@
 .beInformed_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    /* gap: 2.5rem; */
 
 } 
 #text{
@@ -15,6 +15,8 @@
     border: 1px solid transparent;
     transition: var(--transition);  
     width:300px;
+    padding-bottom: 2rem;
+    height: 30rem;
 }
 
 .beInformed_item:hover {
@@ -38,12 +40,28 @@
   display:flex;
   gap: 1rem;
   margin-bottom: 1rem; 
- 
+ padding-top: 2rem;
 }
 
-/* MEDIA QUERIES MEDIUM DEVICES*/
+.testtext{
+    padding-bottom: 2rem;
+}
 
-@media screen and (max-width: 1024px) { 
+.psign2{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.titleBI{
+    display: flex;
+    justify-content: center;
+}
+
+.pictures{
+    padding:1px;
+}
+ @media screen and (max-width: 1024px) { 
   .beInformed_container {
 
       grid-template-columns: 1fr 1fr;
@@ -52,7 +70,8 @@
 } 
 
 
-/* MEDIA QUERIES SMALL DEVICES*/
+/* MEDIA QUERIES SMALL DEVICES*/ 
+
  @media screen and (max-width: 600px) {
 .beInformed_container {
 
@@ -60,6 +79,6 @@
     gap: 1rem;
 
  }
-} 
+}  
 
-
+ 
