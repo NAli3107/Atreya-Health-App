@@ -1,74 +1,69 @@
 .thumbnail {
-    padding: 2rem;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 5px 5px 5px black;
-    justify-content: center;
-    width: fit-content;
-    background-color: #CA8A8A;
-  }
-h1{
-    padding:1rem;
+  padding: 2rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px black;
+  justify-content: center;
+  width: fit-content;
+  background-color: #ca8a8a;
 }
-  .some {
-    background-color: purple;
-    padding:1rem;
-    width: 20rem;
-  }
+h1 {
+  padding: 1rem;
+}
+.some {
+  background-color: purple;
+  padding: 1rem;
+  width: 20rem;
+}
 
 .form {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-  .text {
-    font-weight: bolder;
-    display: flex;
+.text {
+  font-weight: bolder;
+  display: flex;
+}
+.form input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
 
-  }
-  .form input {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    text-align: center;
-  }
+.loginbtn {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-weight: bolder;
+  width: 5rem;
+}
 
-  .loginbtn {
+.sign {
+  width: fit-content;
+}
 
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    font-weight: bolder;
-    width: 5rem;
-  }
-
-  .sign{
-
-    width: fit-content;
-  }
-
-  #signup{
-    margin-top: -28.5rem;
-    margin-left:25rem;
-
-  }
+#signup {
+  margin-top: -28.5rem;
+  margin-left: 25rem;
+}
 
 .loginbtn .btn {
   width: 10rem;
   height: 1rem;
-  background-color: #6D3744;
+  background-color: #6d3744;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 3rem;
 }
-.btn{
-
+.btn {
   width: 12rem;
   height: 2rem;
 }
-  @media (max-width: 690px)  {
-    #signup{
-   margin:0;
-    }
+@media (max-width: 690px) {
+  #signup {
+    margin: 0;
   }
+}

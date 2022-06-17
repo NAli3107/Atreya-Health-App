@@ -58,11 +58,11 @@ export const QUERY_ME = gql`
       username
       email
       thoughts {
-         _id
-         title: String
-         message: String
-         creator: String
-         createdAt: String
+        _id
+        title: String
+        message: String
+        creator: String
+        createdAt: String
       }
     }
   }

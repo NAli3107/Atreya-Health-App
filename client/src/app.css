@@ -1,21 +1,20 @@
-.container{
-    display: flex;
+.container {
+  display: flex;
 }
-.others{
-    flex: 4;
+.others {
+  flex: 4;
 }
-body{
-    background-color:white;
-    /* background-image: ; */
+body {
+  background-color: white;
+  /* background-image: ; */
 }
-p{
-    margin: 150px; 
-    font-family:'Times New Roman', Times, serif;
-    font-size: xx-large;
-    color: rgb(244, 244, 244);
-    
+p {
+  margin: 150px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: xx-large;
+  color: rgb(244, 244, 244);
 }
 img {
-     width: 100%; 
-    height: 50; 
+  width: 100%;
+  height: 50;
 }

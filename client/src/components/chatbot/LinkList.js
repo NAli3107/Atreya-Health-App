@@ -4,8 +4,7 @@ import "./LinkList.css";
 
 const LinkList = (props) => {
   const linkMarkup = props.options.map((link) => (
-
-      <button className="link-list-item" key={link.id} >
+    <button className="link-list-item" key={link.id}>
       <a
         href={link.url}
         target="_blank"
@@ -14,9 +13,7 @@ const LinkList = (props) => {
       >
         {link.text}
       </a>
-
     </button>
-
   ));
 
   return <div className="link-list">{linkMarkup}</div>;

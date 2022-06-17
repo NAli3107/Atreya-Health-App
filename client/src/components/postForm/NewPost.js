@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import Auth from "../../utils/auth";
 import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
-import { idbPromise } from '../../utils/helpers';
+import { idbPromise } from "../../utils/helpers";
 import { QUERY_POSTS } from "../../utils/queries";
 
 const NewPost = () => {
-
-
   const [userFormData, setUserFormData] = useState({ title: "", message: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -33,14 +31,19 @@ const NewPost = () => {
     }
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
-    console.log(token, "done something", userFormData.title, userFormData.message);
+    console.log(
+      token,
+      "done something",
+      userFormData.title,
+      userFormData.message
+    );
     if (!token) {
       return false;
     }
     try {
       const { data } = await post({
-        variables: { ...userFormData }});
- 
+        variables: { ...userFormData },
+      });
     } catch (error) {
       console.error(error);
     }
@@ -50,14 +53,12 @@ const NewPost = () => {
     });
   };
 
-
   return (
     <div>
       <div id="newpost">
-        <h1>
-          What is on your mind?</h1>
-           <p className='add'>Add a post here and share it with the Community</p>
-      
+        <h1>What is on your mind?</h1>
+        <p className="add">Add a post here and share it with the Community</p>
+
         <form onSubmit={handleFormSubmit}>
           <textarea
             id="post-title"
@@ -77,11 +78,13 @@ const NewPost = () => {
             value={userFormData.message}
             required
           ></textarea>
-          <button className= "postbutton" type="submit">Post to your Public Wall!</button>
+          <button className="postbutton" type="submit">
+            Post to your Public Wall!
+          </button>
         </form>
       </div>
 
-{/* see if u can edit n delete these */}
+      {/* see if u can edit n delete these */}
 
       {/* <div id="dashboardlist">
         Your posts
@@ -96,7 +99,7 @@ const NewPost = () => {
     ))}
 
 </div> */}
- </div>
+    </div>
   );
 };
 

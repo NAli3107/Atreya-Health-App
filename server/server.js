@@ -2,8 +2,8 @@ const express = require("express");
 const db = require("./config/connection");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-const { typeDefs, resolvers } = require('./schemas');
-const {authMiddleware} = require('./utils/auth');
+const { typeDefs, resolvers } = require("./schemas");
+const { authMiddleware } = require("./utils/auth");
 // import cors from "cors";
 
 const app = express();
@@ -24,17 +24,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const startApolloServer = async (typeDefs, resolvers) => {
-  console.log('1')
+  console.log("1");
   await server.start();
-  console.log('2')
+  console.log("2");
   server.applyMiddleware({ app });
 
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
   });
-  
+
   db.once("open", () => {
-    console.log('3')
+    console.log("3");
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(
