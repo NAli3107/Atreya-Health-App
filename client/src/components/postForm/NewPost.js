@@ -25,9 +25,7 @@ const NewPost = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     // hn
-    // const cart = await idbPromise('cart', 'get')
 
-    // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -42,12 +40,7 @@ const NewPost = () => {
     try {
       const { data } = await post({
         variables: { ...userFormData }});
-        // hn
-      //   const productData = data.post.products;
-
-      //   productData.forEach((item) => {
-      //     idbPromise('cart', 'delete', item);
-      // });
+ 
     } catch (error) {
       console.error(error);
     }

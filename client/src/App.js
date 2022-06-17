@@ -16,8 +16,7 @@ import "./app.css";
 import WallForm from "./components/postForm/Wall"
 import NewPost from "./components/postForm/NewPost"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Wall from "./pages/Home";
-
+import ChatBot from "./components/chatbot/chatbot";
 
 const httpLink = createHttpLink({ uri: "graphql" });
 const authLink = setContext((_, { headers }) => {
@@ -47,7 +46,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/stayinformed" element={<StayInformed />} />
           <Route path="/stayConnected" element={<WallForm />} />
-          
+          <Route path="/chat" element={<ChatBot />} />
           <Route path="/dashboard" element={<NewPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
