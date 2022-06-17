@@ -29,8 +29,6 @@
 #post-list {
     align-items: center;
     width: 100%;
-    /* background-color:#CA8A8A; */
-    /* background-color: #6D3744; */
 }
 
 h2{
@@ -70,8 +68,8 @@ p{
   .pbody{
     padding-top: 2rem;
     margin: 0px; 
-    font-family: 'Times New Roman', Times, serif;
-    font-size: xx-large;
+    font-family:cursive;
+
   }
 
 
@@ -89,7 +87,7 @@ p{
   }
 
   .card-body {
-    font-size: larger;
+
     padding: 20px;
     font-family: cursive;
 
@@ -113,5 +111,5 @@ p{
 }
 
 .card-text{
-
+margin:3rem
 }

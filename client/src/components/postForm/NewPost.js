@@ -90,10 +90,10 @@ const NewPost = () => {
 
 {/* see if u can edit n delete these */}
 
-      <div id="dashboardlist">
+      {/* <div id="dashboardlist">
         Your posts
       {posts.map((post) => (
-          <div class="thumbnail1 card-body">
+          <div class="thumbnail2 card-body">
 <h5>Your current title: </h5>
         <h1 className="card-title2">{post.title}</h1>
         <h5>Your current post: </h5>
@@ -102,7 +102,7 @@ const NewPost = () => {
     </div>
     ))}
 
-</div>
+</div> */}
  </div>
   );
 };

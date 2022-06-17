@@ -30,7 +30,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                 
-                 <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Dashboard</CustomLink></li>
+                 <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Create a Post</CustomLink></li>
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>
               ) : 
