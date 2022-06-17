@@ -53,12 +53,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           </Routes>
           </Router>
-<<<<<<< HEAD
       
       
-=======
    
->>>>>>> main
       </div>
     </ApolloProvider>
   );

@@ -1,9 +1,8 @@
 import React from "react";
 // import Post from './Post.js';
 import '../components/postForm/Wall';
-<<<<<<< HEAD
 import yoga from "../images/yogo3.png";
-import "./home.css"
+import "./Home.css"
 const Wall = ()   => {
     return(
         <div className="content">
@@ -11,18 +10,16 @@ const Wall = ()   => {
 </div>
 )
 }
-=======
-import yoga3 from "../images/yogo4.png"
-import "./Home.css"
+// import yoga3 from "../images/yogo4.png"
+// import "./Home.css"
 
 export default function Home() {
     return (
 <div className="yogo">
-    <img src={yoga3}/>
+    {/* <img src={yoga3}/> */}
         
   </div> 
     )
 
   }
->>>>>>> main
 
