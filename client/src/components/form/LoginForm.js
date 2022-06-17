@@ -72,9 +72,9 @@ const LoginForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          {/* <Form.Control.Feedback type="invalid">
             Email is required!
-          </Form.Control.Feedback>
+          </Form.Control.Feedback> */}
         </Form.Group>
 <br></br>
         <Form.Group>
@@ -88,12 +88,12 @@ const LoginForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          {/* <Form.Control.Feedback type="invalid">
             Password is required!
       
-          </Form.Control.Feedback>
+          </Form.Control.Feedback> */}
         </Form.Group>
-       <div class ="button">
+       <div className="loginbtn">
         <Button 
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"

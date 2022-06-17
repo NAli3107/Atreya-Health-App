@@ -79,3 +79,13 @@
       li:hover .nav-links-mobile {
         color: black;
       }
+
+      @media screen and (max-width: 500px) {
+        .navbarWrapper{
+          margin:0;
+          font-size: small;
+        }
+        li{
+    list-style: none;
+        }
+          }
