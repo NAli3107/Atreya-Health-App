@@ -9,7 +9,7 @@ const data = [
   {
   id: 1,
   image: IMG1,
-  title: ' Mind',
+  title: ' MIND',
   place: 'https://www.psychotherapy.org.uk/', 
   demo: 'https://www.mind.org.uk/',
     test: 'The Mind is a very delicate yet powerful tool. It is essential to look after it.'
@@ -18,7 +18,7 @@ const data = [
 {
   id: 2,
   image: IMG2,
-  title: 'Body',
+  title: 'BODY',
   place: 'https://www.arbonne.com/gb/en/arb/jeanmcleod/cart?shareId=8821428899367', 
   demo: 'https://youtu.be/YFcSDbKbPn8',
 test:'Physical health is required for a good life. '
@@ -26,7 +26,7 @@ test:'Physical health is required for a good life. '
 {
   id: 3,
   image: IMG3,
-  title: 'Spirit',
+  title: 'SPIRIT',
   place: 'https://www.malvern-hills.co.uk/', 
   demo: 'https://baronseden.com/hoar-cross-hall',
 test:'The power of the spirit in us cannot be restrained or explained by simple cognitive reasoning.'
@@ -39,9 +39,9 @@ const BeInformed = () => {
 
 
   return (
-    <section id='portfolio' className='col-sm-4'>
+    <section id='portfolio'>
       
-      <h1 id ='text'>BE INFORMED</h1>
+      <h1 id ='text'>Be Informed</h1>
       <div className='psign2'>
 <p className="psign"> Information is key, always seek professional advice if you have any medical/health questions, below are some resources you may find useful </p>
 </div>
