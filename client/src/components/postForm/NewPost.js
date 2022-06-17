@@ -60,13 +60,14 @@ const NewPost = () => {
     <div>
       <div id="newpost">
         <h1>
-          What is on your <span>mind</span>?
-        </h1>
+          What is on your mind?</h1>
+           <p className='add'>Add a post here and share it with the Community</p>
+      
         <form onSubmit={handleFormSubmit}>
           <textarea
             id="post-title"
             className="form-primary"
-            placeholder="Title your post!"
+            placeholder="Add a title to your post"
             name="title"
             onChange={handleInputChange}
             value={userFormData.title}
@@ -75,7 +76,7 @@ const NewPost = () => {
           <textarea
             id="post-msg"
             className="form-secondary"
-            placeholder="Then tell everyone what you're thinking..."
+            placeholder="Tell everyone what you're thinking..."
             name="message"
             onChange={handleInputChange}
             value={userFormData.message}

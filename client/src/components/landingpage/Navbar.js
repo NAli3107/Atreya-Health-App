@@ -26,10 +26,10 @@ const AppNavbar = () => {
             <Nav className='ml-auto'>
            <li className="navbarIconBadge">  <Link to="/"> Home </Link></li>
         <li className="navbarIconBadge"> <CustomLink to="/stayinformed">Stay Informed</CustomLink></li>     
-    
+        <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
               {Auth.loggedIn() ? (
                 <>
-                 <li className="navbarIconBadge">  <CustomLink to="/stayConnected">Stay Connected</CustomLink></li>
+                
                  <li className="navbarIconBadge">  <CustomLink to="/dashboard"> Dashboard</CustomLink></li>
                   <Nav.Link onClick={Auth.logout}><li className="navbarIconBadge"> Logout</li></Nav.Link>                  
                 </>

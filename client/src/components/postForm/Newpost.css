@@ -69,3 +69,11 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-thumb {
   background-color: #800015;
 }
+
+.add{
+    margin:0;
+    font-style: italic;
+    font-size:medium;
+    padding-bottom: 2rem;
+    color: white;
+}
