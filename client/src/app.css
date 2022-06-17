@@ -5,8 +5,8 @@
     flex: 4;
 }
 body{
-    background-color: #CA8A8A;
-    background-image: ;
+    background-color:white;
+    /* background-image: ; */
 }
 p{
     margin: 150px; 
@@ -16,6 +16,6 @@ p{
     
 }
 img {
-    width: 100%;
-    height: -10%;
-}   
+     width: 100%; 
+    height: 50; 
+}
