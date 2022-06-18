@@ -1,5 +1,4 @@
 import React from "react";
-// import Post from './Post.js';
 import "../components/postForm/Wall";
 import yoga3 from "../images/yogo4.png";
 import "./Home.css";

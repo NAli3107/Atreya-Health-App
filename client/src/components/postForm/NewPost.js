@@ -4,7 +4,6 @@ import Auth from "../../utils/auth";
 import "./Newpost.css";
 import { useMutation } from "@apollo/react-hooks";
 import { CREATE_POST } from "../../utils/mutations";
-import { idbPromise } from "../../utils/helpers";
 import { QUERY_POSTS } from "../../utils/queries";
 
 const NewPost = () => {
@@ -22,7 +21,6 @@ const NewPost = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // hn
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -83,22 +81,6 @@ const NewPost = () => {
           </button>
         </form>
       </div>
-
-      {/* see if u can edit n delete these */}
-
-      {/* <div id="dashboardlist">
-        Your posts
-      {posts.map((post) => (
-          <div class="thumbnail2 card-body">
-<h5>Your current title: </h5>
-        <h1 className="card-title2">{post.title}</h1>
-        <h5>Your current post: </h5>
-        <p className='pbody card-text'> {post.message}</p>
-
-    </div>
-    ))}
-
-</div> */}
     </div>
   );
 };

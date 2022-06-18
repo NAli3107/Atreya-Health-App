@@ -1,5 +1,4 @@
 import React from "react";
-// hn
 import Login from "./components/form/LoginForm";
 import Signup from "./components/form/SignupForm";
 import {
@@ -40,7 +39,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        {/* hn */}
         <Router>
           <Navbar />
           <Routes>

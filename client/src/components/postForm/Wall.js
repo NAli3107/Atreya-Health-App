@@ -37,7 +37,6 @@ const Wall = () => {
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
       >
-        {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
@@ -76,8 +75,6 @@ const Wall = () => {
                 Created by: {post.creator} on{" "}
                 {moment({ timestamp }).format("MMMM Do YYYY")}
               </h5>
-              {/* <button className="edit">Edit</button>
-            <button className="edit">Delete</button> */}
             </div>
           </div>
         ))}

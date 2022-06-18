@@ -86,6 +86,9 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    /* CRUD edit and delete operations backend code for future development */
+
     //   editPost: async (parent, { postId, title, message, creator }, context) => {
     //     if (context.user) {
     //       const updatePost = await User.findOneAndUpdate(
@@ -96,21 +99,17 @@ const resolvers = {
     //       return updatePost;
     //     }
     //   },
-    //   removePost: async (parent, { postId }, context) => {
-    //     if (context.user) {
-    //       const deletePost = await Posts.findOneAndDelete({
-    //         _id: postId,
-    //         creator: context.user.username,
-    //       });
 
-    //       await User.findOneAndUpdate(
-    //         { _id: context.user._id },
-    //         { $pull: { posts: deletePost._id } }
-    //       );
-    //       return deletePost;
-    //     }
-    //     throw new AuthenticationError("You need to be logged in!");
-    //   },
+    // removePost: async (parent, { postId }, context) => {
+    //   if (context.user) {
+    //     const deletePost = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { posts: {postId} } }
+    //     );
+    //     return deletePost;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
   },
 };
 
