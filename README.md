@@ -15,13 +15,24 @@ This is a polished and responsive MERN stack single-page application that provid
 
 ## Installation
 
+- Css
+- React.js
+- HTML
 - Node.js, 
 - GraphQL, 
 - Express.js, 
 - MongoDB 
 - Mongoose ODM 
+- Heroku
+- JWT
+- API
+- Apollo
+- Chatbot
+- Moment
+- Nodemon
+- Docker
 
-all the above need to be installed prior to use.
+All the above need to be installed prior to use.
 
 
 ## Usage
