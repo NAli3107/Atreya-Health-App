@@ -11,7 +11,7 @@
 
 ## Description
 
-This is a polished and responsive MERN stack single-page application that provides support for individuals seeking health advice. To view the deploye App, click [here.](https://still-savannah-89831.herokuapp.com/)
+This is a polished and responsive MERN stack single-page application that provides support for individuals seeking health advice. To view the deployed App, click [here.](https://still-savannah-89831.herokuapp.com/)
 
 ## Installation
 
