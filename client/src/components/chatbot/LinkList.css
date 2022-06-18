@@ -4,10 +4,8 @@
 }
 
 .link-list-item {
-
-align-items: center;
+  align-items: center;
   display: grid;
-
 }
 
 .link-list-item-url {

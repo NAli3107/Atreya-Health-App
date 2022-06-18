@@ -1,12 +1,12 @@
 const { User, Posts } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const { GraphQLScalarType, Kind } = require('graphql');
+const { GraphQLScalarType, Kind } = require("graphql");
 
 const resolvers = {
   Date: new GraphQLScalarType({
-    name: 'Date',
-    description: 'Date custom scalar type',
+    name: "Date",
+    description: "Date custom scalar type",
     serialize(value) {
       return value.getTime(); // Convert outgoing Date to integer for JSON
     },
@@ -86,31 +86,30 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-  //   editPost: async (parent, { postId, title, message, creator }, context) => {
-  //     if (context.user) {
-  //       const updatePost = await User.findOneAndUpdate(
-  //         { _id: postId },
-  //         { $set: { title, message, creator } },
-  //         { new: true }
-  //       );
-  //       return updatePost;
-  //     }
-  //   },
-  //   removePost: async (parent, { postId }, context) => {
-  //     if (context.user) {
-  //       const deletePost = await Posts.findOneAndDelete({
-  //         _id: postId,
-  //         creator: context.user.username,
-  //       });
 
-  //       await User.findOneAndUpdate(
-  //         { _id: context.user._id },
-  //         { $pull: { posts: deletePost._id } }
-  //       );
-  //       return deletePost;
-  //     }
-  //     throw new AuthenticationError("You need to be logged in!");
-  //   },
+    /* CRUD edit and delete operations backend code for future development */
+
+    //   editPost: async (parent, { postId, title, message, creator }, context) => {
+    //     if (context.user) {
+    //       const updatePost = await User.findOneAndUpdate(
+    //         { _id: postId },
+    //         { $set: { title, message, creator } },
+    //         { new: true }
+    //       );
+    //       return updatePost;
+    //     }
+    //   },
+
+    // removePost: async (parent, { postId }, context) => {
+    //   if (context.user) {
+    //     const deletePost = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { posts: {postId} } }
+    //     );
+    //     return deletePost;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
   },
 };
 

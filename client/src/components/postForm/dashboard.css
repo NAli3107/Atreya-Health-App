@@ -1,28 +1,27 @@
 .post {
-    background-color:#6D3744;
-    padding: 30px;
-    padding-bottom: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
-    width: 60%
+  background-color: #6d3744;
+  padding: 30px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  margin-top: 20px;
+  width: 60%;
 }
 
 #post-author {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #post-author img {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-p{
-    margin:0;
+p {
+  margin: 0;
 }
 
-h3{
-    color:white;
-    font-weight: lighter;
-    font-style: italic;
-    
+h3 {
+  color: white;
+  font-weight: lighter;
+  font-style: italic;
 }

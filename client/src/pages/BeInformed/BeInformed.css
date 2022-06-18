@@ -1,101 +1,87 @@
-
-    #portfolio{
-        background-color: white;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 50px;
-
-    }
-
+#portfolio {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
 
 .beInformed_container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-
-} 
-#text{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+#text {
   text-align: center;
   margin: 0px;
   font-size: xx-large;
-}  
+}
 .beInformed_item {
-    background:  #6D3744;
-    padding: 1.3rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);  
-    width:300px;
-    padding-bottom: 2rem;
-    height: 30rem;
+  background: #6d3744;
+  padding: 1.3rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  width: 300px;
+  padding-bottom: 2rem;
+  height: 30rem;
 }
 
 .beInformed_item:hover {
-    border-color: #6D3744;
-    background:#FAA0A0;
+  border-color: #6d3744;
+  background: #faa0a0;
 }
 .beInformed-image {
-    border-radius: 1.5rem;
-    overflow: hidden;
-    width:50%;
-  
-
+  border-radius: 1.5rem;
+  overflow: hidden;
+  width: 50%;
 }
 
 .beInformed_item h3 {
-    margin: 1.2rem 0 2rem;
-    
+  margin: 1.2rem 0 2rem;
 }
 
 .beInformed_item-cta {
-  display:flex;
+  display: flex;
   gap: 1rem;
-  margin-bottom: 1rem; 
- padding-top: 2rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 
-.testtext{
-    padding-bottom: 2rem;
+.testtext {
+  padding-bottom: 2rem;
 }
 
-.psign2{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2rem;
+.psign2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
-.titleBI{
-    display: flex;
-    justify-content: center;
-    color:white;
+.titleBI {
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
-.pictures{
-    padding:1px;
+.pictures {
+  padding: 1px;
 }
- @media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .beInformed_container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
 
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;    
-  } 
-} 
+/* MEDIA QUERIES SMALL DEVICES*/
 
-
-/* MEDIA QUERIES SMALL DEVICES*/ 
-
- @media screen and (max-width: 800px) {
-.beInformed_container {
-
+@media screen and (max-width: 800px) {
+  .beInformed_container {
     grid-template-columns: 1fr;
     gap: 1rem;
-display: initial;
- }
-
-
-}  
-
- 
+    display: initial;
+  }
+}

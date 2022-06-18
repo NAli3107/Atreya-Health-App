@@ -1,127 +1,114 @@
-
 #wall {
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
 }
 
 #wall h1 {
-    margin: 0px;
+  margin: 0px;
 }
 
 .alert {
-    border-left: 5px solid black;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-    display: flex;
-    align-items: center;
+  border-left: 5px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  display: flex;
+  align-items: center;
 }
 
 .alert p {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 #post-list {
-    align-items: center;
-    width: 100%;
+  align-items: center;
+  width: 100%;
 }
 
-h2{
+h2 {
   font-weight: lighter;
 }
 
-.h3{
-    color:  black important!;
+.h3 {
+  color: black important!;
 }
 
-h5{
-    color:black;
+h5 {
+  color: black;
 }
 
-p{
-    color:black;
+p {
+  color: black;
 }
 
-.cardbox{
-
-
-}
+/* .cardbox {
+} */
 
 .card {
+  display: block;
+  margin: 60px auto;
+  box-shadow: 10px 5px 40px 20px darken(#341cac, 5%);
+  transition: 0.25s;
+}
 
-    display: block;
-    margin: 60px auto;
-    box-shadow: 10px 5px 40px 20px darken(#341cac, 5%);
-    transition: .25s;
+.card-text {
+  margin: 0;
+}
 
-  }
+.pbody {
+  padding-top: 2rem;
+  margin: 0px;
+  font-family: cursive;
+}
 
-  .card-text{
-    margin:0;
-  }
-
-  .pbody{
-    padding-top: 2rem;
-    margin: 0px; 
-    font-family:cursive;
-
-  }
-
-
-  .card-title{
+.card-title {
   display: flex;
-    justify-content: center;
-    background-color: #6D3744;
-    border-bottom: solid black;
-    color:white
-  }
+  justify-content: center;
+  background-color: #6d3744;
+  border-bottom: solid black;
+  color: white;
+}
 
-  .card-subtitle{
-    font-style: italic;
-    font-weight: lighter;
-  }
+.card-subtitle {
+  font-style: italic;
+  font-weight: lighter;
+}
 
-  .card-body {
+.card-body {
+  padding: 20px;
+  font-family: cursive;
+}
 
-    padding: 20px;
-    font-family: cursive;
-
-  }
-
-  .thumbnail1{
+.thumbnail1 {
   border: none;
   border-radius: 1rem;
   box-shadow: 5px 5px 5px black;
-   background-color:#CA8A8A;
+  background-color: #ca8a8a;
+}
 
-
-  }
-
-
-.psign{
+.psign {
   font-size: 18px;
   font-style: italic;
   margin: 0;
   padding-top: 2rem;
 }
 
-.card-text{
-margin:3rem
+.card-text {
+  margin: 3rem;
 }
 
 @media screen and (max-width: 500px) {
-.card-text{
-  margin:0;
-  font-size: small;
-}
-
-.card-subtitle{
-  font-size: small;
-}
-
+  .card-text {
+    margin: 0;
+    font-size: small;
   }
+
+  .card-subtitle {
+    font-size: small;
+  }
+}

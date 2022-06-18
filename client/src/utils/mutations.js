@@ -25,13 +25,13 @@ export const ADD_USER = gql`
   }
 `;
 
-export const CREATE_POST = gql `
-mutation createPost($title: String!, $message: String!) {
-  createPost(title: $title, message: $message) {
-    title
-    message
-    creator
-    createdAt
+export const CREATE_POST = gql`
+  mutation createPost($title: String!, $message: String!) {
+    createPost(title: $title, message: $message) {
+      title
+      message
+      creator
+      createdAt
+    }
   }
-}
-`
+`;
