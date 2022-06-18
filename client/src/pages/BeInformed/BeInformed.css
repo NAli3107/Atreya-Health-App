@@ -11,6 +11,7 @@
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition);  
+    width:300px;
 }
 
 .beInformed_item:hover {

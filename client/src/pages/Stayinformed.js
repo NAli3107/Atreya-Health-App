@@ -52,12 +52,7 @@ const BeInformed = () => {
             <img src={image} alt={title}/>
             </div>
          <h3>{title}</h3>
-          <div className='beInformed_item-cta'>
-          <a href={place}  className='btn' target='_blank'>Get help?</a>
-          <a href={demo} className='btn btn-primary' target='_blank'>Further Info</a>
-          <div>What is {title}? {test}</div>
-          </div>
-          </div>
+         
       
 
            )
