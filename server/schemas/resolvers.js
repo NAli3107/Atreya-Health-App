@@ -86,31 +86,33 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    //   editPost: async (parent, { postId, title, message, creator }, context) => {
-    //     if (context.user) {
-    //       const updatePost = await User.findOneAndUpdate(
-    //         { _id: postId },
-    //         { $set: { title, message, creator } },
-    //         { new: true }
-    //       );
-    //       return updatePost;
-    //     }
-    //   },
-    //   removePost: async (parent, { postId }, context) => {
-    //     if (context.user) {
-    //       const deletePost = await Posts.findOneAndDelete({
-    //         _id: postId,
-    //         creator: context.user.username,
-    //       });
+      editPost: async (parent, { postId, title, message, creator }, context) => {
+        if (context.user) {
+          const updatePost = await User.findOneAndUpdate(
+            { _id: postId },
+            { $set: { title, message, creator } },
+            { new: true }
+          );
+          return updatePost;
+        }
+      },
 
-    //       await User.findOneAndUpdate(
-    //         { _id: context.user._id },
-    //         { $pull: { posts: deletePost._id } }
-    //       );
-    //       return deletePost;
-    //     }
-    //     throw new AuthenticationError("You need to be logged in!");
-    //   },
+      
+      removePost: async (parent, { postId }, context) => {
+        if (context.user) {
+          const deletePost = await Posts.findOneAndDelete({
+            _id: postId,
+            creator: context.user.username,
+          });
+
+          await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $pull: { posts: deletePost._id } }
+          );
+          return deletePost;
+        }
+        throw new AuthenticationError("You need to be logged in!");
+      },
   },
 };
 
